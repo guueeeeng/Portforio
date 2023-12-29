@@ -1,0 +1,46 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'JalnanGothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/JalnanGothic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url('https://webfontworld.github.io/SCoreDream/SCoreDream.css');
+
+*{margin: 0; padding: 0; box-sizing: border-box; font : inherit; color: inherit;}
+a{text-decoration: none;}
+ul,ol{list-style: none;}
+img{max-width: 100%;}
+html{font-size: 10px;}
+body{font-size: 1.6rem; color: #222; font-family: 'SCoreDream'; font-weight: 400;}
+/* custom  */
+.inner{max-width: 1340px; padding: 0 20px; width: 100%; position: relative; margin: 0 auto;}
+.title{
+    text-align: center;
+    position: relative;
+    font-size: 5rem;
+    font-weight: 800;
+    margin-bottom: 10rem;
+    letter-spacing: 10px;
+}
+.title h2{
+    display: inline-block;
+    position: relative;
+}
+.title h2::before{
+    content: "";
+    position: absolute;
+    width: 30%;
+    height: 5px;
+    background-color: #8b1414;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -3rem;
+}
+
+@media screen and (max-width: 1024px){
+    html{font-size: 9px;}
+}
+@media screen and (max-width: 768px){
+    html{font-size: 8px;}
+}
