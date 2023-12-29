@@ -13,6 +13,8 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- progressbar CDN -->
     <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/1.0.0/dist/progressbar.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/style.css">
@@ -60,6 +62,46 @@
                     </a>
                 </li>
             </ul>
+            <div class="mo-menu-btn">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div class="side-menu">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-house"></i>
+                            <span>HOME</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-circle-user"></i>
+                            <span>PROFILE</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-desktop"></i>
+                            <span>WORK</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-gear"></i>
+                            <span>SKILL</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>CONTACT</span>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
         </div>
     </header>
     <section class="home">
@@ -67,7 +109,7 @@
             <h1 class="home-text"></h1>
         </div>
     </section>
-    <section class="profile">
+    <section class="profile" data-aos="fade-up" data-aos-delay="500">
         <div class="inner">
             <div class="title">
                 <h2>ABOUT ME</h2>

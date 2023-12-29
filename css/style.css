@@ -59,6 +59,71 @@ body.scrollfix{
 .header-menu li:hover a span{
     opacity: 1;
 }
+/* 모바일 메뉴 버튼 */
+.mo-menu-btn{
+    cursor: pointer;
+    z-index: 11;
+    display: none;
+}
+.mo-menu-btn .bar{
+    width: 35px;
+    height: 3px;
+    background: #222;
+    position: relative;
+}
+.mo-menu-btn .bar:nth-child(2){
+    margin: 8px 0;
+}
+.mo-menu-btn.active .bar:nth-child(1){
+    transform: rotate(45deg);
+    top: 3px;
+}
+.mo-menu-btn.active .bar:nth-child(2){
+    display: none;
+}
+.mo-menu-btn.active .bar:nth-child(3){
+    transform: rotate(-45deg);
+}
+.side-menu{
+    position: fixed;
+    width: 100%;
+    max-width: 400px;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    background-color: rgba(250,250,250,0.95);
+    padding: 60px 0;
+    font-size: 20px;
+    transition: 0.3s;
+}
+.side-menu.active{
+    right: 0;
+}
+.side-menu ul{}
+.side-menu ul li{
+    border-bottom: 1px solid #ccc;
+}
+.side-menu ul li a{
+    display: flex;
+    padding: 30px;
+    gap: 20px;
+    align-items: center;
+}
+.side-menu ul li a i{
+    color: #d85252;
+}
+.side-menu ul li a span{}
+
+@media screen and (max-width: 1024px){
+
+}
+@media screen and (max-width: 768px){
+    .header-menu{
+        display: none;
+    }
+    .mo-menu-btn{display: block;}
+}
+
 /* HOME */
 .home{
     height: calc(100vh - 10rem);

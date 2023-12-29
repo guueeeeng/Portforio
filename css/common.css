@@ -12,7 +12,13 @@ a{text-decoration: none;}
 ul,ol{list-style: none;}
 img{max-width: 100%;}
 html{font-size: 10px;}
-body{font-size: 1.6rem; color: #222; font-family: 'SCoreDream'; font-weight: 400;}
+body{
+    font-size: 1.6rem; 
+    color: #222; 
+    font-family: 'SCoreDream'; 
+    font-weight: 400;
+    overflow-x: hidden;
+}
 /* custom  */
 .inner{max-width: 1340px; padding: 0 20px; width: 100%; position: relative; margin: 0 auto;}
 .title{
