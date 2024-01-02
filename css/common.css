@@ -11,7 +11,7 @@
 a{text-decoration: none;}
 ul,ol{list-style: none;}
 img{max-width: 100%;}
-html{font-size: 10px;}
+html{font-size: 10px; scroll-behavior: smooth;}
 body{
     font-size: 1.6rem; 
     color: #222; 
