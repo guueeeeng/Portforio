@@ -9,8 +9,9 @@
     <!-- font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <!-- swiper cdn :  -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    
     <!-- progressbar CDN -->
     <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/1.0.0/dist/progressbar.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -21,6 +22,7 @@
     <script src="js/html5shiv.js"></script>
     <!-- <script src="js/prefixfree.min.js"></script> -->
     <script src="js/index.js"></script>
+
 </head>
 <body>
     <header class="header">
@@ -31,34 +33,34 @@
                 </a>
             </div>
             <ul class="header-menu">
-                <li>
+                <li >
                     <a href="#home">
                         <i class="fa-solid fa-house"></i>
-                        <span>HOME</span>
+                        <span>Home</span>
                     </a>
                 </li>
-                <li>
+                <li class="active">
                     <a href="#profile">
                         <i class="fa-solid fa-circle-user"></i>
-                        <span>PROFILE</span>
+                        <span>About me</span>
                     </a>
                 </li>
                 <li>
                     <a href="#portfolio">
                         <i class="fa-solid fa-desktop"></i>
-                        <span>PORTFORIO</span>
+                        <span>Design work</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#skill">
-                        <i class="fa-solid fa-gear"></i>
-                        <span>SKILL</span>
+                    <a href="#career">
+                        <i class="fa-regular fa-list"></i>
+                        <span>Career</span>
                     </a>
                 </li>
                 <li>
                     <a href="#contact">
                         <i class="fa-solid fa-phone"></i>
-                        <span>CONTACT</span>
+                        <span>Contact</span>
                     </a>
                 </li>
             </ul>
@@ -78,19 +80,19 @@
                     <li>
                         <a href="#profile">
                             <i class="fa-solid fa-circle-user"></i>
-                            <span>PROFILE</span>
+                            <span>ABOUT</span>
                         </a>
                     </li>
                     <li>
                         <a href="#portfolio">
                             <i class="fa-solid fa-desktop"></i>
-                            <span>PORTFOLIO</span>
+                            <span>WORK</span>
                         </a>
                     </li>
                     <li>
                         <a href="#skill">
                             <i class="fa-solid fa-gear"></i>
-                            <span>SKILL</span>
+                            <span>CAREER</span>
                         </a>
                     </li>
                     <li>
@@ -104,23 +106,26 @@
             </div>
         </div>
     </header>
-    <section class="home" id="home">
+    
+    <div class="go-top"><i class="fa-solid fa-caret-up"></i></div>
+
+    <!-- <section class="home" id="home">
         <div class="inner">
             <h1 class="home-text"></h1>
         </div>
-    </section>
+    </section> -->
     <section class="profile" id="profile" data-aos="fade-up" data-aos-delay="500">
         <div class="inner">
-            <div class="title">
+            <!-- <div class="title">
                 <h2>ABOUT ME</h2>
-            </div>
+            </div> -->
             <div class="profile-top">
                 <div class="profile-img">
                     <img src="img/about-profile.png" alt="">
                 </div>
                 <div class="profile-text">
                     <h1>디자이너 이영미입니다!</h1>
-                    <p>
+                    <p> 
                        꾸준함이 실력으로 자리잡은 멀티미디어 디자인 경력자입니다. <br>
                        모바일앱 디자인, 소프트웨어 GUI, 아이콘 디자인부터 사진편집 등 <br>
                        다양한 분야의 디자인 경험을 바탕으로 개발자와 원활히 소통하고 <br>
@@ -129,7 +134,7 @@
                     </p>
                 </div>
             </div>
-            <div class="profile-btm">
+            <!-- <div class="profile-btm">
                 <div class="contbox">
                     <h2><i class="fa-solid fa-user"></i>
                         Profile
@@ -207,210 +212,237 @@
                         </li>
                     </ul>
                 </div>
-
-            </div>
+            </div> -->
         </div>
     </section>
+
     <section class="portfolio" id="portfolio">
         <div class="inner">
             <div class="title">
                 <h2>PORTFOLIO</h2>
             </div>
             <div class="portfolio-wrap">
-                <div class="swiper sw-portfolio">
-                    <ul class="swiper-wrapper">
-                        <!-- <li class="swiper-slide">
-                            <div class="pf-thumb">
-                                <img src="https://img.youtube.com/vi/1tgDEmCkVx4/maxresdefault.jpg" alt="">
-                            </div>
-                            <div class="pf-text">
-                                <h2>TYPOGRAPHY</h2>
-                                <p>IU-LILAC TYPOGRAPHY 입니다.</p>
-                                <p>작업기간 : 23.11.01~23.12.01</p>
-                                <div class="tool">
-                                    <p>사용툴 : </p>
-                                    <div class="ic-ae"></div>
-                                    <div class="ic-pro"></div>
-                                    <div class="ic-photo"></div>
-                                    <div class="ic-illust"></div>
-                                </div>
-                                <span class="view-btn">
-                                    VIEW
-                                </span>
-                            </div>
-                        </li> -->
+                <div class="work">
+                    <ul class="tab-list">
+                        <!-- <li>VIDEO</li>
+                        <li>WEB</li> -->
+                    </ul>
+                    <div class="tab-content">
+                        <div class="work-prev">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </div>
+                        <div class="work-next">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                        <div class="swiper sw-work">
+                            <ul class="swiper-wrapper">
+                                <!-- <li class="swiper-slide">
+                                    <div class="imgbox">
+                                        <img src="img/image00.png" alt="">
+                                    </div>
+                                    <div class="textbox">
+                                        <h1>모션그래픽</h1>
+                                        <p>작업기간 : 1주일</p>
+                                    </div>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ability" id="skill">
+            <div class="inner">
+                <div class="title">
+                    <h2>SKILL Ability</h2>
+                </div>
+                <div class="skill-wrap">
+                    <!--스킬 프로그레스 원형 넣기 -->
+                    <div class="skill">
+                    <ul>
+                    <li>
+                        <div class="ps"></div>
+                        <div class="tool-t">Photoshop</div>
+                    </li>
+                    <li>
+                        <div class="ai"></div>
+                        <div class="tool-t">Illustrator</div>
+                    </li>
+                    <li>
+                        <div class="ae"></div>
+                        <div class="tool-t">After Effect</div>
+                    </li>
+                    <li>
+                        <div class="pr"></div>
+                        <div class="tool-t">Premiere pro</div>
+                    </li>
+                    </ul>
+                    <ul>
+                    <li>
+                        <div class="figma"></div>
+                        <div class="tool-t">Figma</div>
+                    </li>
+                    <li>
+                        <div class="blender"></div>
+                        <div class="tool-t">3D blender</div>
+                    </li>
+                    <li>
+                        <div class="ppt"></div>
+                        <div class="tool-t">Powerpoint</div>
+                    </li>
+                    <li>
+                        <div class="html"></div>
+                        <div class="tool-t">web coding</div>
+                    </li>
                     </ul>
                 </div>
-                <div class="pf-arrow portfolio-prev">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </div>
-                <div class="pf-arrow portfolio-next">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </div>
             </div>
+    
         </div>
     </section>
-    <section class="skill" id="skill">
+       
+    <section class="career" id="career">
         <div class="inner">
-            <div class="title">
-                <h2>SKILL & TOOL</h2>
-            </div>
-            <div class="skill-wrap">
+        <div class="title" id="my-history">
+            <h2>CAREER</h2>
+        </div>                    
+        <div class="career-btm">
+            <div class="contbox">
+                <h2><i class="fa-solid fa-user"></i>
+                    Career
+                </h2>
                 <ul>
                     <li>
-                        <div class="top">
-                            <div class="icon">
-                                <img src="img/folder_premiere.svg" alt="프리미어">
-                            </div>
-                            <div class="progress pro_pr"></div>
-                        </div>
-                        <div class="btm">
-                            <p>
-                                사진 보정 및 편집, 목업 활용이 가능합니다. <br>
-                                팝업, 배너, 로고, 아이콘, 상세페이지와 같은 디자인 작업을 할 수 있습니다
-                            </p>
-                        </div>
+                        <span>2018.06<br>  ~ 2023.09 </span>
+                        <p>샤푸(주)
+                           배달대행 중개, 대리운전모바일 앱 UI/UX 디자인</p>
                     </li>
                     <li>
-                        <div class="top">
-                            <div class="icon">
-                                <img src="img/folder_after_effects.svg" alt="에프터이펙트">
-                            </div>
-                            <div class="progress pro_ae"></div>
-                        </div>
-                        <div class="btm">
-                            <p>
-                                사진 보정 및 편집, 목업 활용이 가능합니다. <br>
-                                팝업, 배너, 로고, 아이콘, 상세페이지와 같은 디자인 작업을 할 수 있습니다
-                            </p>
-                        </div>
+                        <span>2017.03<br>   ~ 2018.05</span>
+                        <p>(주)큐텍코리아
+                           물류운송 및 대리운전모바일 앱 UI/UX 디자인</p>
                     </li>
                     <li>
-                        <div class="top">
-                            <div class="icon">
-                                <img src="img/folder_illust.svg" alt="일러스트레이터">
-                            </div>
-                            <div class="progress pro_ai"></div>
-                        </div>
-                        <div class="btm">
-                            <p>
-                                사진 보정 및 편집, 목업 활용이 가능합니다. <br>
-                                팝업, 배너, 로고, 아이콘, 상세페이지와 같은 디자인 작업을 할 수 있습니다
-                            </p>
-                        </div>
+                        <span>2014.10<br>   ~ 2016.07 </span>
+                        <p>자기알리미(주)/주임
+                           콜백문자 시스템 모바일 앱 디자인, 웹쇼핑몰 디자인</p>
                     </li>
                     <li>
-                        <div class="top">
-                            <div class="icon">
-                                <img src="img/folder_photoshop.svg" alt="포토샵">
-                            </div>
-                            <div class="progress pro_ps"></div>
-                        </div>
-                        <div class="btm">
-                            <p>
-                                사진 보정 및 편집, 목업 활용이 가능합니다. <br>
-                                팝업, 배너, 로고, 아이콘, 상세페이지와 같은 디자인 작업을 할 수 있습니다
-                            </p>
-                        </div>
-                    </li>
-                </ul>
-                <ul>
+                        <span>2011.03<br>   ~ 2013.02 </span>
+                        <p>(주)단디자인/대리
+                           삼성카메라 GUI 가이드라인 제작</p>
+                    </li>                    
                     <li>
-                        <div class="top">
-                            <div class="icon">
-                                <img src="img/folder_html.svg" alt="">
-                            </div>
-                            <div class="progress pro_html"></div>
-                        </div>
-                        <div class="btm">
-                            <p>
-                                디자인 시안을 보고 웹표준과 웹접근성을 준수하여 여러 브라우저에서 보더라도 동일하게 볼 수 있는 웹페이지를 완성 할 수 있습니다.
-                            </p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="top">
-                            <div class="icon">
-                                <img src="img/folder_css.svg" alt="">
-                            </div>
-                            <div class="progress pro_css"></div>
-                        </div>
-                        <div class="btm">
-                            <p>
-                                디자인 시안에 맞는 레이아웃 배치와 디자인, 효과를 넣어 줄 수 있습니다. <br>
-                                미디어쿼리를 활용한 반응형 웹페이지를 제작 할 수 있습니다.
-                            </p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="top">
-                            <div class="icon">
-                                <img src="img/folder_js.svg" alt="">
-                            </div>
-                            <div class="progress pro_js"></div>
-                        </div>
-                        <div class="btm">
-                            <p>
-                                자바스크립트 표준 ES5 / ES6 버전을 기준으로 여러가지 데이터 형태를 이해하고
-                                웹페이지 동작에 필요한 스크립트 언어를 작성 할 수 있습니다.
-                            </p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="top">
-                            <div class="icon">
-                                <img src="img/folder_git.svg" alt="">
-                            </div>
-                            <div class="progress pro_git"></div>
-                        </div>
-                        <div class="btm">
-                            <p>
-                                프로젝트를 생성하고 버전관리를 할 수 있습니다.
-                            </p>
-                        </div>
+                        <span>...   ~ 2010 </span>
+                        <p>전체 경력보기</p>
                     </li>
                 </ul>
             </div>
-        </div>
-    </section>
+            <div class="contbox">
+                <h2><i class="fa-solid fa-graduation-cap"></i>
+                    Education
+                </h2>
+                <ul>
+                    <li>
+                        <span>2024.04.</span>
+                        <p>
+                            그린컴퓨터아트학원<br>
+                            (멀티미디어) 디지털 영상편집과정 수료
+                        </p>
+                    </li>
+                    <li>
+                        <span>2017.03.</span>
+                        <p>
+                            그린컴퓨터아트학원<br>
+                            웹디자인 취업과정 수료
+                        </p>
+                    </li>
+                    <li>
+                        <span>2002.02.</span>
+                        <p>
+                            대구보건대학<br>
+                            산업정보디자인학부 졸업
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="contbox">
+                <h2><i class="fa-solid fa-address-card"></i>
+                    Lisence
+                </h2>
+                <ul>
+                    <li>
+                        <span>2017.02.</span>
+                        <p>
+                            GTQ 포토샵 1급
+                        </p>
+                    </li>
+                    <li>
+                        <span>2004.06.</span>
+                        <p>
+                            자동차 운전면허 1종 보통
+                        </p>
+                    </li>
+                    <li>
+                        <span>2001.06.</span>
+                        <p>
+                            ACS Photoshop 5.0<br>
+                            ACS illustrator 8.0
+                        </p>
+                    </li>
+                </ul>
+                <div class="btn-area">
+                    <a class="btn-resume" href="#">
+                        <span><i class="fa-regular fa-file-pdf"></i> 이력서 PDF 다운로드</span>
+                    </a>
+                </div>
+            </div>
+        </div> 
+    </section>    
+    
     <section class="contact" id="contact">
         <div class="inner">
             <div class="title">
                 <h2>CONTACT</h2>
             </div>
             <div class="contact-wrap">
-                <form action="https://formsubmit.co/guueeng@gmail.com" method="POST" target="_blank" class="mail-form">
-                    <input type="hidden" name="_captcha" value="false" alt="로봇인가 확인하는거">
-                    <input type="hidden" name="_subject" value="포트폴리오 연락">
-                    <p>Name <i class="fa fa-user"></i></p>
-                    <input type="text" placeholder="성함*" name="name" required class="input">
-                    <p>Email Address <i class="fa-solid fa-envelope"></i></p>
-                    <input type="email" name="email" placeholder="이메일*" required class="input">
-                    <p>Message <i class="fa fa-pencil"></i></p>
-                    <textarea name="message" placeholder="메세지*"></textarea>
-                    <input type="hidden" name="_next" value="https://guueeeeng.github.io/portforio/thanks.html" alt="메일전송 후 메시지로이동">
-                    <button type="submit" class="btn">Send</button>
-                </form>
                 <ul class="icon-wrap">
                     <li>
                         <a href="#">
-                            <img src="img/ic_kakao.png" alt="">
+                            <img src="img/ic_cont_email.png" alt="">
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="img/ic_insta.png" alt="">
+                            <img src="img/ic_cont_kakao.png" alt="">
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="img/ic_github.png" alt="">
+                            <img src="img/ic_cont_blog.png" alt="">
                         </a>
                     </li>
                 </ul>
+                <div class="form-view">
+                    <form action="https://formsubmit.co/guueeng@gmail.com" method="POST" target="_blank" class="mail-form">
+                        <input type="hidden" name="_captcha" value="false" alt="로봇인가 확인하는거">
+                        <input type="hidden" name="_subject" value="포트폴리오 연락">
+                        <p><i class="fa fa-user"></i> Name </p>
+                        <input type="text" placeholder="성함*" name="name" required class="input">
+                        <p><i class="fa-solid fa-envelope"></i> Email Address </p>
+                        <input type="email" name="email" placeholder="이메일*" required class="input">
+                        <p><i class="fa fa-pencil"></i> Message </p>
+                        <textarea name="message" placeholder="메세지*"></textarea>
+                        <input type="hidden" name="_next" value="https://guueeeeng.github.io/portforio/thanks.html" alt="메일전송 후 메시지로이동">
+                        <button type="submit" class="btn">Send</button>
+                    </form>
+                </div>
+
+
             </div>
         </div>
     </section>
+    
     <footer class="footer"></footer>
     <div class="modal">
         <i class="close-btn fa-solid fa-xmark"></i>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>경력표 부분만</title>
+        <!-- type.js cdn -->
+        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+        <!-- font-awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <!-- swiper cdn :  -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <!-- progressbar CDN -->
+        <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/1.0.0/dist/progressbar.js"></script>
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        
+        <link rel="stylesheet" href="css/common.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/html5shiv.js"></script>
+
+
+    <style>
+        /* 경력 부분 */
+        .career{
+            padding: 15rem 0;
+        }
+        .career-wrap{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .career-wrap ul{
+            width: 45%;
+        }
+        .career-wrap ul li{}
+        .career-wrap ul li:not(:last-child){
+            margin-bottom: 5rem;
+        }
+        .career-wrap ul li .top{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .career-wrap ul li .top .icon{
+            width: 15%;
+        }
+        .career-wrap ul li .top .icon img{
+            width: 100%;
+        }
+        .career-wrap ul li .top .progress{
+            width: 80%;
+        }
+        .career-wrap ul li .btm{
+            padding-left: 20%;
+            line-height: 1.5;
+            font-size: 1.8rem;
+        }
+        .progressbar-text{
+            color: #000 !important;
+            font-size: 2rem;
+            left: auto !important;
+            right: 0;
+            transform: rotateY(-50%) !important;
+        }
+
+/* 경력학력자격증 부분 */
+
+        #my-history{margin-top: 60px;}
+        .career-btm{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding: 4rem 0;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+            border-radius: 12px;
+        }
+        .career-btm .contbox{
+            flex: 1;
+            padding: 0 2.5rem;
+        }
+        .career-btm .contbox:not(:last-child){
+            border-right: 1px solid #ececec;
+        }
+        .career-btm .contbox h2{
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+        .career-btm .contbox h2 i{
+            margin-right: 10px;
+        }
+        .career-btm .contbox ul{}
+        .career-btm .contbox ul li{
+            display: flex;
+            line-height: 1.2;
+        }
+        .career-btm .contbox ul li:not(:last-child){
+            margin-bottom: 10px;
+        }
+        .career-btm .contbox ul li span{
+            width: 60%;
+            display: inline-block;
+        }
+        .career-btm .contbox ul li p{
+            width: calc(100% - 10px);
+            margin-bottom: auto;
+        } 
+        .btn-area{
+            position: relative;
+            padding: 4.5rem;
+        }
+        .btn-area .btn-resume{
+            position: flex;
+            display: block;
+            bottom: -4rem;
+            align-items: center;
+            background: #d85252; 
+            padding: 5px;
+            color: #fff;
+            border-radius: 5px;
+            padding-left: 1.5rem;
+        }
+
+        @media screen and (max-width: 1024px){
+            .career-top{
+                flex-direction: column;
+            }
+            .career-img{
+                width: 100%;
+                max-width: 300px;
+                margin-bottom: 30px;
+            }
+            .career-text{
+                width: 100%;
+            }
+
+        }
+        @media screen and (max-width: 768px){
+            .career-btm{
+                flex-direction: column;
+                gap: 30px;
+            }
+            .career-btm .contbox:not(:last-child){
+                border: none;
+            }    
+        }
+
+    </style>
+</head>
+<body>
+       
+    <section class="career" id="career">
+        <div class="inner">
+            <div class="title">
+                <h2>SKILL Ability</h2>
+            </div>
+            <div class="career-wrap">
+                <ul>
+                    <li>
+                        <div class="top">
+                            <div class="icon">
+                                <img src="img/folder_premiere.svg" alt="프리미어">
+                            </div>
+                            <div class="progress pro_pr"></div>
+                        </div>
+                        <div class="btm">
+                            <p>
+                                사진 보정 및 편집, 목업 활용이 가능합니다. <br>
+                                팝업, 배너, 로고, 아이콘, 상세페이지와 같은 디자인 작업을 할 수 있습니다
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="title" id="my-history">
+                <h2>CAREER</h2>
+            </div>                    
+            <div class="career-btm">
+                <div class="contbox">
+                    <h2><i class="fa-solid fa-user"></i>
+                        Career
+                    </h2>
+                    <ul>
+                        <li>
+                            <span>2018.06<br> ~ 2023.09 </span>
+                            <p>샤푸(주)
+                               배달대행 중개, 대리운전모바일 앱 UI/UX 디자인</p>
+                        </li>
+                        <li>
+                            <span>2017.03<br>  ~ 2018.05</span>
+                            <p>(주)큐텍코리아
+                               물류운송 및 대리운전모바일 앱 UI/UX 디자인</p>
+                        </li>
+                        <li>
+                            <span>2014.10<br>  ~ 2016.07 </span>
+                            <p>자기알리미(주)/주임
+                               콜백문자 시스템 모바일 앱웹쇼핑몰 디자인</p>
+                        </li>
+                        <li>
+                            <span>2011.03<br>  ~ 2013.02 </span>
+                            <p>(주)단디자인/대리
+                               삼성카메라 GUI 가이드라인 제작</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contbox">
+                    <h2><i class="fa-solid fa-graduation-cap"></i>
+                        Education
+                    </h2>
+                    <ul>
+                        <li>
+                            <span>2024.04.</span>
+                            <p>
+                                그린컴퓨터아트학원<br>
+                                (멀티미디어) 디지털 영상편집과정 수료
+                            </p>
+                        </li>
+                        <li>
+                            <span>2017.03.</span>
+                            <p>
+                                그린컴퓨터아트학원<br>
+                                웹디자인 취업과정 수료
+                            </p>
+                        </li>
+                        <li>
+                            <span>2002.02.</span>
+                            <p>
+                                대구보건대학<br>
+                                산업정보디자인학부 졸업
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contbox">
+                    <h2><i class="fa-solid fa-address-card"></i>
+                        Lisence
+                    </h2>
+                    <ul>
+                        <li>
+                            <span>2017.02.</span>
+                            <p>
+                                GTQ 포토샵 1급
+                            </p>
+                        </li>
+                        <li>
+                            <span>2004.06.</span>
+                            <p>
+                                자동차 운전면허 1종 보통
+                            </p>
+                        </li>
+                        <li>
+                            <span>2001.06.</span>
+                            <p>
+                                ACS Photoshop 5.0<br>
+                                ACS illustrator 8.0
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="btn-area">
+                        <a class="btn-resume" href="#">
+                            <span><i class="fa-solid fa-address-card"></i>  이력서 PDF 다운로드</span>
+                        </a>
+                    </div>
+                </div>
+            </div> 
+
+
+
+        </div>
+    </section>
+    
+
+</body>
+</html>

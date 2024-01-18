@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+        .img-wrap{max-width: 1200px; margin: 0 auto;}
+        .img-wrap ul{display: flex; gap: 10px; flex-wrap: wrap;}
+        .img-wrap ul li{width: calc((100% - 20px) / 3); font-size: 0;}
+        
+        .img-wrap ul li .thumb-img{width: 100%;}
+        .img-wrap ul li .thumb-img img{width: 100%;}
+
+        .img-wrap ul li.img-view{
+            width: 100%; 
+            height: 100vh;
+            /* text-align: center;  */
+            background-color: #FFF6DF; 
+            margin-top: 10px; 
+            overflow: hidden; 
+            position: relative; 
+            transition: 0.5s; 
+            padding-bottom: 0;
+        }
+        .img-wrap ul li.img-view .form-view{
+            position: absolute; 
+            width: 90%; 
+            height: 90%; 
+            display: inline-block; 
+            top: 5%; left: 5%;
+        }
+        .img-wrap ul li.img-view .form-view .form{width: 90%;}
+        .img-wrap ul li.img-view.active{padding-bottom: 73%; }
+    
+/* 이메일 작성폼 */
+        .mail-form{
+            font-size: 2rem;
+            margin-bottom: 5rem;
+        }
+        .mail-form p{
+            margin-left: 1.5rem;
+        }
+        .mail-form input,
+        .mail-form textarea{
+            width: 100%;
+            height: 5rem;margin: 10px 0 20px;
+            border: 2px solid #ccc;
+            border-radius: 20px;
+            padding: 0 10px;
+            resize: none;
+        }
+        .mail-form textarea{
+            height: 20rem;
+            padding: 10px;
+        }
+        .mail-form .btn-wrap{
+            display: flex; gap: 10px; flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .mail-form .btn-wrap .btnx{
+            width: 27%;
+            height: 5rem;
+            border: none;
+            background-color: #F05A23;    
+            border-radius: 20px;
+            color: #fff;
+            cursor: pointer;
+        }
+        .mail-form .btno{
+            width: 70%;
+            height: 5rem;
+            border: none;
+            background-color: #F05A23;    
+            border-radius: 20px;
+            color: #fff;
+            cursor: pointer;
+        }
+        .success-mail{
+            border: 1px solid #F05A23;
+            display: inline-block;
+            padding: 5rem;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            font-size: 2rem;
+        }
+        .success-mail a{
+            display: inline-block;
+            margin-top: 3rem;
+            padding: 10px 20px;
+            border: 2px solid #8b1414;
+            border-radius: 50px;
+            color: #8b1414;    
+        }
+    </style>
+</head>
+<body>
+    <div class="img-wrap">
+        <ul>
+            <li>
+                <div class="thumb-img">
+                    <img src="img/ic_cont_email.png" alt="">
+                </div>
+            </li>
+            <li>
+                <div class="thumb-img">
+                    <a href="#"><img src="img/ic_cont_kakao.png" alt=""></a>
+                </div>
+            </li>
+            <li>
+                <div class="thumb-img">
+                    <a href="#"><img src="img/ic_cont_blog.png" alt=""></a>
+                </div>
+            </li>
+            <li class="img-view img-view1">
+                <div class="form-view">
+                    <form action="https://formsubmit.co/guueeng@gmail.com" method="POST" target="_blank" class="mail-form">
+                        <!-- <input type="hidden" name="_captcha" value="false" alt="로봇인가 확인하는거">
+                        <input type="hidden" name="_subject" value="포트폴리오 연락">
+                        <p><i class="fa fa-user"></i> Name </p>
+                        <input type="text" placeholder="성함*" name="name" required class="input">
+                        <p><i class="fa-solid fa-envelope"></i> Email Address </p>
+                        <input type="email" name="email" placeholder="이메일*" required class="input">
+                        <p><i class="fa fa-pencil"></i> Message </p>
+                        <textarea name="message" placeholder="메세지*"></textarea>
+                        <input type="hidden" name="_next" value="https://guueeeeng.github.io/portforio/thanks.html" alt="메일전송 후 메시지로이동">
+                        <div class="btn-wrap">
+                        <button type="cancel" class="btnx">Cancel</button>
+                        <button type="submit" class="btno">Send</button>
+                        </div> -->
+                    </form>
+                </div>                   
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
+<script>
+    let thumb = document.querySelectorAll(".thumb-img")
+    let imgView = document.querySelector(".img-view1")
+    let formView = document.querySelector(".form-view")
+
+    thumb.forEach(function(item, index){
+        if(index < 1){
+            item.addEventListener("click", function(){
+                // let imgSrc = this.querySelector("img").src
+                formView.innerHTML = `
+                    <form action="https://formsubmit.co/guueeng@gmail.com" method="POST" target="_blank" class="mail-form">
+                        <input type="hidden" name="_captcha" value="false" alt="로봇인가 확인하는거">
+                        <input type="hidden" name="_subject" value="포트폴리오 연락">
+                        <p><i class="fa fa-user"></i> Name </p>
+                        <input type="text" placeholder="성함*" name="name" required class="input">
+                        <p><i class="fa-solid fa-envelope"></i> Email Address </p>
+                        <input type="email" name="email" placeholder="이메일*" required class="input">
+                        <p><i class="fa fa-pencil"></i> Message </p>
+                        <textarea name="message" placeholder="메세지*"></textarea>
+                        <input type="hidden" name="_next" value="https://guueeeeng.github.io/portforio/thanks.html" alt="메일전송 후 메시지로이동">
+                        <div class="btn-wrap">
+                        <button type="cancel" class="btnx">Cancel</button>
+                        <button type="submit" class="btno">Send</button>
+                        </div>
+                        </form>
+                    `
+                imgView.classList.add("active");
+            })
+        }        
+
+    })
+
+
+</script>

@@ -5,6 +5,41 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
+   }
+   
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 700;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
+   }
+   
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 300;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
+   }
+   
+   .nanumbarungothic * {
+    font-family: 'NanumBarunGothic', sans-serif;
+   }
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
 @import url('https://webfontworld.github.io/SCoreDream/SCoreDream.css');
 
 *{margin: 0; padding: 0; box-sizing: border-box; font : inherit; color: inherit;}
@@ -15,11 +50,11 @@ html{font-size: 10px; scroll-behavior: smooth;}
 body{
     font-size: 1.6rem; 
     color: #222; 
-    font-family: 'SCoreDream'; 
-    font-weight: 400;
+    font-family: 'Pretendard-Regular'; 
+    font-weight: 300;
     overflow-x: hidden;
 }
-/* custom  */
+/* custom */
 .inner{max-width: 1340px; padding: 0 20px; width: 100%; position: relative; margin: 0 auto;}
 .title{
     text-align: center;
@@ -30,8 +65,10 @@ body{
     letter-spacing: 10px;
 }
 .title h2{
+    font-family: 'JalnanGothic';
     display: inline-block;
     position: relative;
+    color: #CF4848;
 }
 .title h2::before{
     content: "";

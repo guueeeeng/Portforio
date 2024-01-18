@@ -8,7 +8,32 @@ window.onload = function(){
         }else{
             header.classList.remove("active")
         }
+    //스크롤 내리면 menu span에 active 추가
+        let scrollPosition = window.scrollY;
+        let sectionItem = document.querySelectorAll("section");
+        sectionItem.forEach(function(item){
+            let sectionTop = item.offsetTop - 300;
+            let sectionHeight = item.clientHeight;
+
+            if(scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight){
+                let sectionId = item.id
+                document.querySelector(".header-menu li.active").classList.remove("active")
+                document.querySelector(".header-menu li a[href = '#"+ sectionId +"']").parentNode.classList.add("active")
+            }
+        })
+    //상단으로 이동하는 버튼
+        let goTop = document.querySelector(".go-top");
+        if(scrollPosition >= 100){
+            goTop.classList.add("active") //class를 추가
+
+        }else{
+            goTop.classList.remove("active")
+        }
     })
+    document.querySelector(".go-top").addEventListener("click", function(){
+        window.scrollTo(0,0)
+    })
+
 
     // 모바일 메뉴 버튼
     let moMenuBtn = document.querySelector(".mo-menu-btn")
@@ -25,76 +50,142 @@ window.onload = function(){
         }
     })
 
+    // 텍스트가 한 글자씩 나타나는 스크립트
+    // let HomeTyped = new Typed(".home-text", {
+    //     strings:["안녕하세요","멀티미디어 디자이너 <br> 이영미입니다"],
+    //     typeSpeed:100,
+    //     cursorChar:"",
+    //     loop:true,
+    //     fadeOut: true
+    // })
 
-    let HomeTyped = new Typed(".home-text", {
-        strings:["안녕하세요","멀티미디어 디자이너 <br> 이영미입니다"],
-        typeSpeed:100,
-        cursorChar:"",
-        loop:true,
-        fadeOut: true
-    })
-    // portfolio data
-    let workData = {
-        item_count: 3,
-        item_1:{
-            videoid:"1tgDEmCkVx4", 
-            tit : "TYPOGRAPHY",             
-            des : "IU-LILAC TYPOGRAPHY 입니다.",
-            period : "2023.11.01 ~ 2023.12.01", 
-            tools : `<div class="ic-ae"></div><div class="ic-pro"></div><div class="ic-photo"></div><div class="ic-illust"></div>`
-        },
-        item_2:{
-            videoid:"u9eehcAHhi8", 
-            tit : "Motion Graphic", 
-            des : "IU-LILAC Motion Graphic 입니다.",
-            period : "2023.11.01 ~ 2023.12.01", 
-            tools : `<div class="ic-ae"></div><div class="ic-illust"></div>`
-        },
-        item_3:{
-            videoid:"Yu2uuyRJ2l4", 
-            tit : "LIVE 2D",             
-            des : "IU-LILAC LIVE 2D 입니다.",
-            period : "2023.11.01 ~ 2023.12.01", 
-            tools : "After Effect, Photoshop"
-        },
-    }
-    // 포트폴리오 리스트 HTML추가
-    let pfWrap = document.querySelector(".sw-portfolio ul")
-    let pfListHtml = ``;
-    for(let i = 0; i < workData.item_count; i++){
-        let obj = workData[`item_${i+1}`]
-        let temp = `
-            <li class="swiper-slide">
-               <div class="pf-thumb">
-                   <img src="https://img.youtube.com/vi/${obj.videoid}/maxresdefault.jpg" alt="Tjaspdlfdlalwl">
-               </div>
-               <div class="pf-text">
-                   <h2>${obj.tit}</h2>
-                   <p>${obj.des}</p>
-                   <p>작업기간 : ${obj.period}</p>
-                   <div class="tool">
-                       <p>사용툴 : </p>
-                       ${obj.tools}
-                   </div>
-                   <span class="view-btn">
-                       VIEW
-                   </span>
-               </div>
-            </li>
-        `
-        pfListHtml += temp
-    }
-    pfWrap.innerHTML = pfListHtml
 
-    // 포트폴리오 스와이퍼 적용
-    let swPortfolio = new Swiper(".sw-portfolio",{
-        slidesPerView : 1,
-        spaceBetween : 10,
-        navigation : {
-            prevEl: ".portfolio-prev",
-            nextEl: ".portfolio-next",
-        },
+// 썸네일 Work 부분
+    // 스와이퍼 썸네일의 화살표부분    
+    let workCont;
+    workCont = new Swiper(".sw-work",{
+        loop: true, 
+        spaceBetween: 10,
+        loopedSlides : 5,
+        navigation:{
+            nextEl : ".work-next",
+            prevEl : ".work-prev"
+        }
     })
+
+    /* work json 파일 연동하는 코드 */
+    let workData;
+    const eventXhttp = new XMLHttpRequest();
+    eventXhttp.open("GET", "js/work_data.json");
+    eventXhttp.send();
+    eventXhttp.onreadystatechange = function(event){
+        const req = event.target;
+        if(req.readyState === XMLHttpRequest.DONE){
+            workData = JSON.parse(req.response);
+            workSection(workData)
+        }
+    }
+    function workSection(_data){
+        let tabList = document.querySelector(".tab-list")
+        workData = _data;
+        let tabHtml = ``;
+        let dataArr = _data.work;
+        for(let i = 0; i < dataArr.length; i++){
+            let html = `<li>${dataArr[i].catename}</li>`
+            tabHtml += html
+        }
+        tabList.innerHTML = tabHtml
+
+        let tabItem = document.querySelectorAll(".tab-list li")
+        for(let i = 0; i< dataArr.length; i++){
+            tabItem[0].classList.add("active")
+            tabItem[i].addEventListener("click", function(){
+                for(let j = 0; j < tabItem.length; j++){
+                    tabItem[j].classList.remove("active")
+                }
+                tabItem[i].classList.add("active")
+                workSlide(i)
+            })
+        }
+        workSlide(0)
+    }
+    let workSwiper;
+    function workSlide(_idx){
+        let swWorkHtml = ``
+        if(_idx === 0){
+            for(let i = 1; i < workData.work.length; i++){
+                let listData = workData.work[i].list;
+                for(let j = 0; j < listData.length; j++){
+                    let obj = listData[j];
+                    let html = `
+                        <li class="swiper-slide">
+                           <div class="imgbox">
+                               <img src="img/${obj.img}" alt="${obj.alt}">
+                           </div>
+                           <div class="textbox">
+                               <h1>${obj.title}</h1>
+                               <p ${obj.period ? "style='display:block'" : "style='display:none'"}>Tool : ${obj.period}</p>
+                           </div>
+                        </li> 
+                    `;
+                    swWorkHtml += html
+                }
+                let swWorkWrapper = document.querySelector(".sw-work ul")
+                swWorkWrapper.innerHTML = swWorkHtml                
+            }            
+        }else{
+                let listData = workData.work[_idx].list;
+                for(let i = 0; i < listData.length; i++){
+                    let obj = listData[i];
+                    let html = `
+                    <li class="swiper-slide">
+                       <div class="imgbox">
+                           <img src="img/${obj.img}" alt="${obj.alt}">
+                       </div>
+                       <div class="textbox">
+                           <h1>${obj.title}</h1>
+                           <p ${obj.period ? "style='display:block'" : "style='display:none'"}>Tool : ${obj.period}</p>
+                       </div>
+                    </li> 
+                `;
+                swWorkHtml += html
+            }
+            let swWorkWrapper = document.querySelector(".sw-work ul")
+            swWorkWrapper.innerHTML = swWorkHtml          
+            }
+
+        workSwiper = new Swiper(".sw-work", {
+            slidesPerView: 1,
+                spaceBetween: 15,
+                breakpoints: {
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 25,
+                    },
+                },            
+        })
+            // 썸네일 클릭 > 모달오픈
+            let workItem = document.querySelectorAll(".sw-work ul li")
+            workItem.forEach(function(item, index){
+                item.addEventListener("click", function(){
+                    let obj = workData.work[index];
+                    modal.classList.add("active")
+                    modalCont.classList.add("active")
+                    modalCont.innerHTML = `<iframe src="https://www.youtube.com/embed/${obj.videoid}?autoplay=1&mute=1" wfullscreen></iframe>`
+                    setTimeout(function(){
+                        modalCont.classList.add("active")
+                    },500)
+                    body.classList.add("scrollfix")
+                })
+            })
+            modal.addEventListener("click",function(){
+                modal.classList.remove("active")
+                modalCont.classList.remove("active")
+                body.classList.remove("scrollfix")
+                modalCont.innerHTML = ``
+            })
+        
+    }    
 
     // 포트폴리오 영상 모달창
     let pfItem = document.querySelectorAll(".sw-portfolio ul li")
@@ -120,58 +211,57 @@ window.onload = function(){
         body.classList.remove("scrollfix")
     })
 
-    // SKILL
+
+    
+    // 스킬 프로그레스
     function progressBar(selector, gauge, color){
-        var bar = new ProgressBar.Line(selector, {
-            strokeWidth: 5,
+        var bar = new ProgressBar.Circle(selector, {
+            strokeWidth: 10,  //채워지는 선의 굵기
             easing: 'easeInOut',
             duration: 1400,
             color: color,
-            trailColor: '#eee',
-            trailWidth: 3,
-            step : function(state, circle){
-                circle.setText(Math.round(circle.value() *100)+"%")
-            }
+            trailColor: '#CFCFCF', // 배경 선 색상
+            trailWidth: 8, //배경 선의 긁기
+            // step : function(state, circle){
+            //     circle.setText(Math.round(circle.value() *100)+"%")
+            // }
         });
         bar.animate(gauge);
         return bar; // Return the progress bar instance
     }
     let observe = new IntersectionObserver(function(entries){
         entries.forEach(function(item){
-            if(item.isIntersecting){                
-                proPr.animate(0.5)
-                proAe.animate(0.5)
-                proAi.animate(0.5)
-                proPs.animate(0.5)
+            if(item.isIntersecting){
+                proPs.animate(1)
+                proAi.animate(0.95)
+                proAe.animate(0.9)
+                proPr.animate(0.75)
+                proFigma.animate(0.8)
+                proBlender.animate(0.6)
+                proPpt.animate(0.9)
                 proHtml.animate(0.5)
-                proCss.animate(0.5)
-                proJs.animate(0.5)
-                proGit.animate(0.5)
             }else{
-                proPr.animate(0)
-                proAe.animate(0)
-                proAi.animate(0)
                 proPs.animate(0)
+                proAi.animate(0)
+                proAe.animate(0)
+                proPr.animate(0)
+                proFigma.animate(0)
+                proBlender.animate(0)
+                proPpt.animate(0)
                 proHtml.animate(0)
-                proCss.animate(0)
-                proJs.animate(0)
-                proGit.animate(0)
             }
         })
     })
     let skillSection = document.querySelector(".skill")
 
     // Start the progress bars with initial values
-    let proPr = progressBar(".pro_pr", 0, "#ea77ff");
-    let proAe = progressBar(".pro_ae", 0, "#d291ff");
-    let proAi = progressBar(".pro_ai", 0, "#ff7c00");
-    let proPs = progressBar(".pro_ps", 0, "#00c8ff");
-    let proHtml = progressBar(".pro_html", 0, "#e44d26");
-    let proCss = progressBar(".pro_css", 0, "#2f9dd9");
-    let proJs = progressBar(".pro_js", 0, "#f7df1e");
-    let proGit = progressBar(".pro_git", 0, "#f34f29");
+    let proPs = progressBar(".ps", 0, "#1080E8");
+    let proAi = progressBar(".ai", 0, "#FF9A00");
+    let proAe = progressBar(".ae", 0, "#4B4BE1");
+    let proPr = progressBar(".pr", 0, "#5151CF");
+    let proFigma = progressBar(".figma", 0, "#FF835C");
+    let proBlender = progressBar(".blender", 0, "#FF7021");
+    let proPpt = progressBar(".ppt", 0, "#d14424");
+    let proHtml = progressBar(".html", 0, "#52B2FF");
     observe.observe(skillSection)
-
-
 }
-

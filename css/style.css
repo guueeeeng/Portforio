@@ -1,6 +1,30 @@
 body.scrollfix{
     overflow: hidden;
 }
+.go-top{
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    padding: 15px;
+    border-radius: 20px;
+    background-color:rgba(240, 90, 36, 0.8);
+    color: #fff;
+    cursor: pointer;
+    /* display: none; 
+    css의 display 속성은 transition을 사용할 수 없다.     
+    트렌지션이 없으면 뚝딱뚝딱 이동하는데 이 부분을 자연스럽게 투명도를 주어 등장하게 하는 방법으로 다음과 같이 입력해본다.
+    display none을 사용하지 않으면서 transition을 사용하는 방법으로 opacity : 0; + visibility : hidden; 을 세트로 사용하면 된다. */
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+    z-index: 12;
+
+    filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.5));
+}
+.go-top.active{
+    opacity: 1;
+    visibility: visible;
+}
 .header{
     width: 100%;
     height: 10rem;
@@ -8,11 +32,12 @@ body.scrollfix{
     left: 0;
     position: sticky;
     z-index: 11;
-    background-color: rgb(255, 241, 240);
+    background-color: rgba(240, 90, 36, 0.95);
     backdrop-filter: blur(10px);
 }
 .header.active{
-    /*스크롤을 한 번 내렸을 때 적용하도록 자바스크립트로 제어할 예정*/
+    /*스크롤을 한 번 내렸을 때 적용하도록 자바스크립트로 제어*/
+    transition: 0.5s;
     border-bottom: 1px solid #ececec;
     background-color: transparent;
 }
@@ -24,6 +49,7 @@ body.scrollfix{
 }
 .header .inner .logo{
     height: 6rem;
+
 }
 .header .inner .logo a{
     height: 100%;
@@ -31,7 +57,9 @@ body.scrollfix{
 }
 .header .inner .logo a img{
     height: 100%;
+    filter: brightness(200%) ;
 }
+.header .inner .logo a img.active{}
 .header-menu{
     display: flex;
     gap: 5rem;
@@ -41,23 +69,33 @@ body.scrollfix{
 .header-menu li{
     position: relative;
 }
-.header-menu li a{}
-.header-menu li a i{}
+.header.active .header-menu li span{
+    color: #8b1414;
+}
+.header.active .header-menu li.active span{
+    color: rgba(240, 90, 36, 0.95) !important;
+}
+.header-menu li.active span{
+    color:#FFC700 !important;
+    font-weight: 700;
+}
+.header-menu li:nth-child(1){display: none;}
+.header-menu li a i{display: none;}
 .header-menu li a span{
-    position: absolute;
+    position: flex;
     display: block;
     bottom: -4rem;
     left: 50%;
-    transform: translateX(-50%);
-    background: #d85252;
+    /* transform: translateX(-50%);
+    background: #d85252; 
+    padding: 5px; */
     color: #fff;
-    padding: 5px;
     border-radius: 5px;
-    opacity: 0;
+    opacity: 1;
     transition: 0.3s;
 }
 .header-menu li:hover a span{
-    opacity: 1;
+    color: #FFC700;
 }
 /* 모바일 메뉴 버튼 */
 .mo-menu-btn{
@@ -125,7 +163,7 @@ body.scrollfix{
 }
 
 /* HOME */
-.home{
+/* .home{
     height: calc(100vh - 10rem);
     background-color: rgb(255, 241, 240);
 }
@@ -141,7 +179,7 @@ body.scrollfix{
 .home-text{
     font-family: 'JalnanGothic';
     display: inline-block;
-}
+} */
 /* PROFILE */
 .profile{
     padding: 15rem 0;
@@ -176,7 +214,7 @@ body.scrollfix{
 }
 
 /* 프로필 아래 */
-.profile-btm{
+/* .profile-btm{
     display: flex;
     justify-content: space-between;
     margin-top: 3rem;
@@ -213,7 +251,7 @@ body.scrollfix{
 }
 .profile-btm .contbox ul li p{
     width: calc(100% - 100px);
-}
+} */
 
 @media screen and (max-width: 1024px){
     .profile-top{
@@ -238,6 +276,60 @@ body.scrollfix{
         border: none;
     }    
 }
+
+/* 스와이퍼 포트폴리오 + 탭필터 */
+.work{
+    padding: 15rem 0;
+}
+
+.work .work-prev,
+.work .work-next{
+    position: absolute; top: 43%; transform: translateY(-50%); z-index: 11; cursor: pointer; font-size: 40px;
+    color: #8b1414;
+}
+.work .work-prev{left: -2.5rem;}
+.work .work-next{right: -2.5rem;}
+
+.work .tab-list{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}        
+.work .tab-list li{
+    padding: 0 20px;
+    border : 1px solid #000;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    cursor: pointer;
+}
+.work .tab-list li.active{
+    background-color: #000;
+    color: #fff;
+}
+.work .tab-content{
+    position: relative;
+    margin-bottom: 20px;
+}
+.work .tab-content ul li .imgbox{
+    position: relative;
+    width: 100%;
+    padding-bottom: 60%;
+}
+.work .tab-content ul li .imgbox img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+.work .tab-content ul li .textbox{
+    text-align: center;
+}
+
 /* 포트폴리오 */
 .portfolio{
     padding: 15rem 0;
@@ -247,7 +339,8 @@ body.scrollfix{
     position: relative;
     padding: 0 6rem;
 }
-.sw-portfolio{}
+
+/* .sw-portfolio{}
 .sw-portfolio ul{}
 .sw-portfolio ul li{
     display: flex;
@@ -342,18 +435,19 @@ body.scrollfix{
 }
 .portfolio-next{
     right: 0;
-}
+} */
+
 @media screen and (max-width: 1024px){
     
 }
 @media screen and (max-width: 768px){
     .portfolio-wrap{padding: 0;}
-    .sw-portfolio ul li{
+    /* .sw-portfolio ul li{
         flex-direction: column;
     }
     .pf-thumb{width: 100%; margin-bottom: 30px;}
     .pf-text{width: 100%;}
-    .pf-arrow{display: none;}
+    .pf-arrow{display: none;} */
 }
 /* 모달 */
 .modal{
@@ -400,47 +494,70 @@ body.scrollfix{
 }
 
 /* 스킬 부분 */
-.skill{
+.ability {
     padding: 15rem 0;
+    background-color:#FFFEFE;
 }
-.skill-wrap{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-}
-.skill-wrap ul{
-    width: 45%;
-}
-.skill-wrap ul li{}
-.skill-wrap ul li:not(:last-child){
-    margin-bottom: 5rem;
-}
-.skill-wrap ul li .top{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.skill-wrap ul li .top .icon{
-    width: 15%;
-}
-.skill-wrap ul li .top .icon img{
+.ability .skill {
     width: 100%;
+    height: 300px;
+    margin: 50px auto;
 }
-.skill-wrap ul li .top .progress{
-    width: 80%;
+.skill ul {
+    width: 100%; max-width: 1300px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
 }
-.skill-wrap ul li .btm{
-    padding-left: 20%;
-    line-height: 1.5;
-    font-size: 1.8rem;
+.skill ul li {
+    width: 15%; position: relative;
 }
-.progressbar-text{
-    color: #000 !important;
-    font-size: 2rem;
-    left: auto !important;
-    right: 0;
-    transform: rotateY(-50%) !important;
+.skill ul li::after {
+    content: "";
+    padding-bottom: 100%;
+    display: block;
+}
+.skill ul li > div {
+    width: 100%; height: 100%;
+    position: absolute;
+}
+.skill ul li .tool-t{
+    position: absolute;
+    text-align: center;
+    margin-top: 1rem;
+    top: 100%;
+}
+.skill ul li .ps {
+    background: url(../img/round_photoshop.png) no-repeat center / 40%;
+    border-radius: 100%;
+}
+.skill ul li .ai {
+    background: url(../img/round_illust.png) no-repeat center / 40%;
+    border-radius: 100%;
+}
+.skill ul li .ae {
+    background: url(../img/round_after_effects.png) no-repeat center / 40%;
+    border-radius: 100%;
+}
+.skill ul li .pr {
+    background: url(../img/round_premiere.png) no-repeat center / 40%;
+    border-radius: 100%;
+}
+.skill ul li .figma {
+    background: url(../img/round_figma.png) no-repeat center / 45%;
+    border-radius: 100%;
+}
+.skill ul li .html {
+    background: url(../img/round_web.png) no-repeat center / 50%;
+    border-radius: 100%;
+}
+.skill ul li .ppt {
+    background: url(../img/round_ppt.png) no-repeat center / 40%;
+    border-radius: 100%;
+}
+.skill ul li .blender {
+    background: url(../img/round_blender.png) no-repeat center / 40%;
+    border-radius: 100%;
 }
 /* 자바스크립트를 무시하고 CSS 적용할 때는 끝에다가 !important 써주면 된다. */
 @media screen and (max-width: 1024px){
@@ -451,27 +568,138 @@ body.scrollfix{
     .skill-wrap ul{width: 100%;}
 }
 
+
+/* 경력학력자격증 부분 */
+
+.career{
+    padding: 15rem 0;
+    background-color: lightblue;
+}
+.career-btm{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding: 4rem 0;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+    border-radius: 12px;
+}
+.career-btm .contbox{
+    flex: 1;
+    padding: 0 2.5rem;
+}
+.career-btm .contbox:not(:last-child){
+    border-right: 1px solid #ececec;
+}
+.career-btm .contbox h2{
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+.career-btm .contbox h2 i{
+    margin-right: 10px;
+}
+.career-btm .contbox ul{}
+.career-btm .contbox ul li{
+    display: flex;
+    line-height: 1.2;
+}
+.career-btm .contbox ul li:not(:last-child){
+    margin-bottom: 10px;
+}
+.career-btm .contbox ul li span{
+    width: 60%;
+    display: inline-block;
+}
+.career-btm .contbox ul li p{
+    width: calc(100% - 10px);
+    margin-bottom: auto;
+} 
+.btn-area{
+    position: relative;
+    padding: 4.5rem;
+}
+.btn-area .btn-resume{
+    position: flex;
+    display: block;
+    bottom: -4rem;
+    text-align: center;
+    background: #d85252; 
+    padding: 10px;
+    color: #fff;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 1024px){
+    .career-top{
+        flex-direction: column;
+    }
+    .career-img{
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 30px;
+    }
+    .career-text{
+        width: 100%;
+    }
+
+}
+@media screen and (max-width: 768px){
+    .career-btm{
+        flex-direction: column;
+        gap: 30px;
+    }
+    .career-btm .contbox:not(:last-child){
+        border: none;
+    }    
+}
+
+
 /* Contact */
 .contact{
     padding: 15rem 0;
+    background-color: lightgoldenrodyellow;
 }
 .contact-wrap{
     width: 100%;
     max-width: 500px;
     margin: 0 auto;
-
 }
+.contact-wrap .icon-wrap{
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+}
+.contact-wrap .icon-wrap li{
+    width: 15%;
+}
+.contact-wrap .icon-wrap li img{
+    width: 100%;
+}
+
+
+.form-view{
+    width: 100%; 
+    margin-top: 50px; 
+    overflow: hidden; 
+    position: relative;
+    padding-bottom: 0;
+}
+
 .mail-form{
     font-size: 2rem;
     margin-bottom: 5rem;
+}
+.mail-form p{
+    margin-left: 1.5rem;
 }
 .mail-form input,
 .mail-form textarea{
     width: 100%;
     height: 5rem;margin: 10px 0 20px;
-    border: 2px solid #000;
-    border-radius: 8px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
     padding: 0 10px;
+    resize: none;
 }
 .mail-form textarea{
     height: 20rem;
@@ -481,13 +709,13 @@ body.scrollfix{
     width: 100%;
     height: 5rem;
     border: none;
-    background-color: #8b1414;    
-    border-radius: 8px;
+    background-color: #F05A23;    
+    border-radius: 20px;
     color: #fff;
     cursor: pointer;
 }
 .success-mail{
-    border: 1px solid #8b1414;
+    border: 1px solid #F05A23;
     display: inline-block;
     padding: 5rem;
     text-align: center;
@@ -504,15 +732,4 @@ body.scrollfix{
     border: 2px solid #8b1414;
     border-radius: 50px;
     color: #8b1414;    
-}
-.contact-wrap .icon-wrap{
-    display: flex;
-    justify-content: center;
-    gap: 5%;
-}
-.contact-wrap .icon-wrap li{
-    width: 15%;
-}
-.contact-wrap .icon-wrap li img{
-    width: 100%;
 }
