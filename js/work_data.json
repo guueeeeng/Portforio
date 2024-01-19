@@ -1,8 +1,5 @@
 {
     "work" : [
-        {    "catename" : "ALL"
-        
-        },
         {
             "catename" : "VIDEO",
             "list":[
@@ -10,7 +7,8 @@
                     "img":"img_pm_cover_01.png",
                     "alt":"VIDEO THUMB",
                     "title":"IU - Lilac 키네틱 타이포그라피",
-                    "period":"After Effects"
+                    "period":"After Effects",
+                    "videoid" : "_ITOYZ39EgY"
                 },
                 {
                     "img":"image08.png",

@@ -182,6 +182,7 @@ body.scrollfix{
 } */
 /* PROFILE */
 .profile{
+    background-color: #FFFDF6;
     padding: 15rem 0;
 }
 .profile-top{
@@ -277,6 +278,20 @@ body.scrollfix{
     }    
 }
 
+
+/* 포트폴리오 */
+.portfolio{
+    padding: 15rem 0;
+    background: rgb(255,253,246);
+    background: linear-gradient(0deg, rgba(255,239,239,1) 0%, rgba(255,253,246,1) 100%);
+}
+.portfolio-wrap{
+    position: relative;
+    
+    text-align: center;
+    padding: 0 6rem;
+}
+
 /* 스와이퍼 포트폴리오 + 탭필터 */
 .work{
     padding: 15rem 0;
@@ -328,16 +343,6 @@ body.scrollfix{
 }
 .work .tab-content ul li .textbox{
     text-align: center;
-}
-
-/* 포트폴리오 */
-.portfolio{
-    padding: 15rem 0;
-    background-color: #fafafa;
-}
-.portfolio-wrap{
-    position: relative;
-    padding: 0 6rem;
 }
 
 /* .sw-portfolio{}
@@ -449,6 +454,9 @@ body.scrollfix{
     .pf-text{width: 100%;}
     .pf-arrow{display: none;} */
 }
+
+
+
 /* 모달 */
 .modal{
     width: 100%;height: 100%;
@@ -496,12 +504,10 @@ body.scrollfix{
 /* 스킬 부분 */
 .ability {
     padding: 15rem 0;
-    background-color:#FFFEFE;
 }
 .ability .skill {
-    width: 100%;
     height: 300px;
-    margin: 50px auto;
+    margin: 30px auto;
 }
 .skill ul {
     width: 100%; max-width: 1300px;
@@ -573,13 +579,16 @@ body.scrollfix{
 
 .career{
     padding: 15rem 0;
-    background-color: lightblue;
+    background: rgb(255,239,239);
+    background: linear-gradient(180deg, rgba(255,239,239,1) 0%, rgba(255,244,203,1) 85%);
 }
+
 .career-btm{
     display: flex;
     justify-content: space-between;
     margin-top: 3rem;
     padding: 4rem 0;
+    background-color: rgba(250,250,250,0.25);
     box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
     border-radius: 12px;
 }
@@ -607,25 +616,46 @@ body.scrollfix{
     margin-bottom: 10px;
 }
 .career-btm .contbox ul li span{
-    width: 60%;
+    width: 50%;
+    left: 30px;
+    text-align: center;
     display: inline-block;
 }
 .career-btm .contbox ul li p{
     width: calc(100% - 10px);
     margin-bottom: auto;
 } 
+
+.career-all{
+    position: flex;
+    display: block;
+    bottom: -4rem;
+    text-align: center;
+    border: 1px solid #d85252; 
+    padding: 6px;
+    color: #d85252;
+    border-radius: 5px;
+}
+.career-all:hover{
+    cursor: pointer;
+    background-color: #d85252;
+    color: #fff;
+}
 .btn-area{
     position: relative;
     padding: 4.5rem;
 }
+.btn-area .btn-resume:hover{    
+    color: #FFC700;
+}
+
 .btn-area .btn-resume{
-    position: flex;
     display: block;
     bottom: -4rem;
     text-align: center;
     background: #d85252; 
     padding: 10px;
-    color: #fff;
+    color: #FFF;
     border-radius: 5px;
 }
 
@@ -651,13 +681,18 @@ body.scrollfix{
     .career-btm .contbox:not(:last-child){
         border: none;
     }    
+    .career-all{
+        margin-left: -15%;
+        max-width: 50%;
+    }
 }
 
 
 /* Contact */
 .contact{
     padding: 15rem 0;
-    background-color: lightgoldenrodyellow;
+    background: rgb(250,250,210);
+    background: linear-gradient(0deg, rgba(250,250,210,1) 10%, rgba(255,244,203,1) 100%);
 }
 .contact-wrap{
     width: 100%;
@@ -732,4 +767,12 @@ body.scrollfix{
     border: 2px solid #8b1414;
     border-radius: 50px;
     color: #8b1414;    
+}
+
+
+.footer{
+    background-color: rgba(250,250,210,1) ;
+    text-align: center; 
+    color: #8b1414;
+    padding: 30px;
 }
