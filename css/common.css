@@ -82,8 +82,8 @@ body{
 }
 
 @media screen and (max-width: 1024px){
-    html{font-size: 9px;}
+    html{font-size: 10px;}
 }
 @media screen and (max-width: 768px){
-    html{font-size: 8px;}
+    html{font-size: 9px;}
 }

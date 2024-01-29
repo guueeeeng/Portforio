@@ -35,6 +35,7 @@ body.scrollfix{
     background-color: rgba(240, 90, 36, 0.95);
     backdrop-filter: blur(10px);
 }
+
 .header.active{
     /*스크롤을 한 번 내렸을 때 적용하도록 자바스크립트로 제어*/
     transition: 0.5s;
@@ -191,13 +192,13 @@ body.scrollfix{
     justify-content: space-between;
 }
 .profile-img{
-    width: 30%;
+    width: 40%;
 }
 .profile-img img{
     width: 100%;
 }
 .profile-text{
-    width: 65%;
+    width: 60%;
     position: relative;
     text-align: center;
     border-radius: 15px;
@@ -213,46 +214,10 @@ body.scrollfix{
 .profile-text p{
     line-height: 1.5;
 }
-
-/* 프로필 아래 */
-/* .profile-btm{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 3rem;
-    padding: 4rem 0;
-    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
-    border-radius: 12px;
+.profile-text span{
+    font-size: 1.5rem;
+    color: #F05A23;
 }
-.profile-btm .contbox{
-    flex: 1;
-    padding: 0 3.5rem;
-}
-.profile-btm .contbox:not(:last-child){
-    border-right: 1px solid #ececec;
-}
-.profile-btm .contbox h2{
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-bottom: 2rem;
-}
-.profile-btm .contbox h2 i{
-    margin-right: 10px;
-}
-.profile-btm .contbox ul{}
-.profile-btm .contbox ul li{
-    display: flex;
-    line-height: 1.6;
-}
-.profile-btm .contbox ul li:not(:last-child){
-    margin-bottom: 10px;
-}
-.profile-btm .contbox ul li span{
-    width: 100%;
-    display: inline-block;
-}
-.profile-btm .contbox ul li p{
-    width: calc(100% - 100px);
-} */
 
 @media screen and (max-width: 1024px){
     .profile-top{
@@ -265,8 +230,7 @@ body.scrollfix{
     }
     .profile-text{
         width: 100%;
-    }
-    
+    }    
 }
 @media screen and (max-width: 768px){
     .profile-btm{
@@ -286,220 +250,17 @@ body.scrollfix{
     background: linear-gradient(0deg, rgba(255,239,239,1) 0%, rgba(255,253,246,1) 100%);
 }
 .portfolio-wrap{
-    position: relative;
-    
+    position: relative;    
     text-align: center;
     padding: 0 6rem;
 }
 
 /* 스와이퍼 포트폴리오 + 탭필터 */
 .work{
-    padding: 15rem 0;
+    padding: 5rem 0;
 }
+/* .work 이하 부분은 tab_modal.css 참조*/
 
-.work .work-prev,
-.work .work-next{
-    position: absolute; top: 43%; transform: translateY(-50%); z-index: 11; cursor: pointer; font-size: 40px;
-    color: #8b1414;
-}
-.work .work-prev{left: -2.5rem;}
-.work .work-next{right: -2.5rem;}
-
-.work .tab-list{
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
-}        
-.work .tab-list li{
-    padding: 0 20px;
-    border : 1px solid #000;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    border-radius: 30px;
-    cursor: pointer;
-}
-.work .tab-list li.active{
-    background-color: #000;
-    color: #fff;
-}
-.work .tab-content{
-    position: relative;
-    margin-bottom: 20px;
-}
-.work .tab-content ul li .imgbox{
-    position: relative;
-    width: 100%;
-    padding-bottom: 60%;
-}
-.work .tab-content ul li .imgbox img{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    object-fit: cover;
-}
-.work .tab-content ul li .textbox{
-    text-align: center;
-}
-
-/* .sw-portfolio{}
-.sw-portfolio ul{}
-.sw-portfolio ul li{
-    display: flex;
-    background-color: #fff;
-    padding: 5rem;
-    border-radius: 2rem;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-.pf-thumb{
-    border: 1px solid #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    width: 50%;
-    font-size: 0;
-}
-.pf-thumb img{
-    width: 100%;
-}
-.pf-text{
-    width: 45%;
-}
-.pf-text h2{padding: 10px;
-    font-size: 2.5rem;
-    background-color: #d85252;
-    display: inline-block;
-    border-radius: 5px;
-    color: #fff;
-    margin-bottom: 20px;
-}
-.pf-text p{
-    font-size: 2rem;
-    margin-bottom: 2rem;
-}
-.pf-text .tool{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-.pf-text .tool p{
-    margin-bottom: 0;
-}
-.pf-text .tool > div{
-    width: 3rem;
-    height: 3rem;
-}
-.pf-text .tool .ic-ae{
-    background: url(../img/round_after_effects.png)
-    no-repeat center / cover;
-}
-.pf-text .tool .ic-pro{
-    background: url(../img/round_premiere.png)
-    no-repeat center / cover;}
-.pf-text .tool .ic-photo{
-    background: url(../img/round_photoshop.png)
-    no-repeat center / cover;}
-.pf-text .tool .ic-illust{
-    background: url(../img/round_illust.png)
-    no-repeat center / cover;}
-.pf-text .view-btn{
-    margin-top: 3rem;
-    font-size: 2rem;
-    border-radius: 50px;
-    border: 3px solid #d85252;
-    color:  #d85252;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: 0.5s;
-    display: inline-block;
-}
-.pf-text .view-btn:hover{
-    color: #fff;
-    background-color: #d85252;
-}
-.pf-arrow{
-    color: #fff;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    width: 5rem;
-    height: 5rem;
-    background-color: #e6e6e6;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.portfolio-prev{
-    left: 0;
-}
-.portfolio-next{
-    right: 0;
-} */
-
-@media screen and (max-width: 1024px){
-    
-}
-@media screen and (max-width: 768px){
-    .portfolio-wrap{padding: 0;}
-    /* .sw-portfolio ul li{
-        flex-direction: column;
-    }
-    .pf-thumb{width: 100%; margin-bottom: 30px;}
-    .pf-text{width: 100%;}
-    .pf-arrow{display: none;} */
-}
-
-
-
-/* 모달 */
-.modal{
-    width: 100%;height: 100%;
-    position: fixed;
-    background-color:rgba(0,0,0,0.5);
-    top: 0;
-    left: 0;
-    z-index: 21;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
-}
-.modal.active{
-    opacity: 1;
-    visibility: visible;
-}
-.modal .close-btn{
-    position: absolute;
-    top: 3rem;
-    right: 2.5%;
-    display: flex;
-    justify-content: center;
-    width: 5rem;
-    height: 5rem;
-    align-items: center;
-    border-radius: 50%;
-    background-color: #fff;
-    cursor: pointer;
-    color:#d85252;
-    font-size: 3rem;
-}
-.modal .modal-cont{
-    width: 95%;
-    height: 80%;
-    /* background-color: #fff; */
-}
-.modal-cont iframe{
-    height: 100%;
-    width: 100%;
-    border: none;
-}
 
 /* 스킬 부분 */
 .ability {
@@ -509,16 +270,16 @@ body.scrollfix{
     height: 300px;
     margin: 30px auto;
 }
-.skill ul {
+.ability .skill ul {
     width: 100%; max-width: 1300px;
     display: flex;
     justify-content: space-around;
-    margin-bottom: 50px;
+    margin-bottom: 10rem;
 }
-.skill ul li {
+.ability .skill ul li {
     width: 15%; position: relative;
 }
-.skill ul li::after {
+.ability .skill ul li::after {
     content: "";
     padding-bottom: 100%;
     display: block;
@@ -532,6 +293,7 @@ body.scrollfix{
     text-align: center;
     margin-top: 1rem;
     top: 100%;
+    height: auto;
 }
 .skill ul li .ps {
     background: url(../img/round_photoshop.png) no-repeat center / 40%;
@@ -576,14 +338,12 @@ body.scrollfix{
 
 
 /* 경력학력자격증 부분 */
-
 .career{
     padding: 15rem 0;
     background: rgb(255,239,239);
     background: linear-gradient(180deg, rgba(255,239,239,1) 0%, rgba(255,244,203,1) 85%);
 }
-
-.career-btm{
+.career-top{
     display: flex;
     justify-content: space-between;
     margin-top: 3rem;
@@ -592,71 +352,73 @@ body.scrollfix{
     box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
     border-radius: 12px;
 }
-.career-btm .contbox{
+.career-top .contbox{
     flex: 1;
-    padding: 0 2.5rem;
+    padding: 0 2rem;
 }
-.career-btm .contbox:not(:last-child){
+.career-top .contbox:not(:last-child){
     border-right: 1px solid #ececec;
 }
-.career-btm .contbox h2{
+.career-top .contbox h2{
     font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 2rem;
 }
-.career-btm .contbox h2 i{
+.career-top .contbox h2 i{
     margin-right: 10px;
 }
-.career-btm .contbox ul{}
-.career-btm .contbox ul li{
+/* .career-top .contbox ul{} */
+.career-top .contbox ul li{
     display: flex;
     line-height: 1.2;
+    padding: 1rem 0;
 }
-.career-btm .contbox ul li:not(:last-child){
+.career-top .contbox ul li:not(:last-child){
     margin-bottom: 10px;
 }
-.career-btm .contbox ul li span{
+.career-top .contbox ul li span{
     width: 50%;
     left: 30px;
     text-align: center;
     display: inline-block;
 }
-.career-btm .contbox ul li p{
+
+.career-top .contbox ul li p{
     width: calc(100% - 10px);
     margin-bottom: auto;
 } 
+.career-top .contbox ul .btn-area{
+    position: relative;
+    flex-wrap: wrap;
+    padding: 4.5rem;
+}
 
-.career-all{
+.c-all-btn{
     position: flex;
-    display: block;
     bottom: -4rem;
     text-align: center;
     border: 1px solid #d85252; 
-    padding: 6px;
+    padding: 8px;
     color: #d85252;
-    border-radius: 5px;
+    border-radius: 8px;
 }
-.career-all:hover{
+.c-all-btn:hover{
     cursor: pointer;
     background-color: #d85252;
     color: #fff;
 }
-.btn-area{
-    position: relative;
-    padding: 4.5rem;
-}
-.btn-area .btn-resume:hover{    
+.career-top .contbox ul .btn-area .btn-resume:hover{    
     color: #FFC700;
 }
-
-.btn-area .btn-resume{
+.career-top .contbox ul .btn-area .btn-resume{
     display: block;
     bottom: -4rem;
     text-align: center;
     background: #d85252; 
     padding: 10px;
     color: #FFF;
-    border-radius: 5px;
+    border-radius: 8px;
+    margin-top: 20px;
 }
 
 @media screen and (max-width: 1024px){
@@ -671,21 +433,51 @@ body.scrollfix{
     .career-text{
         width: 100%;
     }
-
+    .btn-area{        
+        left: 26%;
+        width: 50%;
+    }
 }
 @media screen and (max-width: 768px){
-    .career-btm{
+    .career-top{
         flex-direction: column;
         gap: 30px;
     }
-    .career-btm .contbox:not(:last-child){
+    .career-top .contbox:not(:last-child){
         border: none;
     }    
     .career-all{
         margin-left: -15%;
         max-width: 50%;
     }
+    .btn-area{
+        left: 25%;
+        width: 50%;
+    }
 }
+
+/* 전체경력보기 팝업영역 */
+
+.career-btm{
+    /* padding: 15rem 0; */
+    position: relative;
+}
+
+/* ▼ 이미지만 띄워주는 모달창  */
+.career-modal{
+    position: fixed; background-color: rgba(0,0,0,.5); top: 50%; left: 50%; transform: translate(-50%, -50%); display: flex; justify-content: center; align-items: center; width: 100%; height: 0; overflow: hidden; transition: 0.5s; z-index: 11;
+}
+.career-modal.active{height: 100%;}
+.career-modal-cont{width: 95%; max-width: 1600px; position: relative; transform: scale(0); transition: 0.5s;}
+.career-modal-cont.active{transform: scale(1);}
+.career-modal .work-view{display: flex;}
+.career-modal .work-view .player{position: relative; width: 70%;}
+.career-modal .work-view .player::after{padding-bottom: 56.25%; content: ""; display: block;}
+.career-modal .work-view .player img{position: absolute; width: 100%; height: 100%; border: none;}
+
+/* ▲ 이미지만 띄워주는 모달창  */
+
+
 
 
 /* Contact */
@@ -702,10 +494,10 @@ body.scrollfix{
 .contact-wrap .icon-wrap{
     display: flex;
     justify-content: center;
-    gap: 5%;
+    gap: 10%;
 }
 .contact-wrap .icon-wrap li{
-    width: 15%;
+    width: 20%;
 }
 .contact-wrap .icon-wrap li img{
     width: 100%;
@@ -716,8 +508,15 @@ body.scrollfix{
     width: 100%; 
     margin-top: 50px; 
     overflow: hidden; 
-    position: relative;
     padding-bottom: 0;
+    /* display: none; */
+    height: 0; 
+    transition: 0.5s;
+}
+
+.form-view.show {
+	/* display: block; */
+    height: 540px;
 }
 
 .mail-form{
@@ -740,8 +539,22 @@ body.scrollfix{
     height: 20rem;
     padding: 10px;
 }
+.mail-form .btn-wrap{
+    display: flex;
+    justify-content: space-between;
+}
+
+.mail-form .btn-x{
+    width: 25%;
+    height: 5rem;
+    border: none;
+    background-color: #F05A23;    
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+}
 .mail-form .btn{
-    width: 100%;
+    width: 73%;
     height: 5rem;
     border: none;
     background-color: #F05A23;    

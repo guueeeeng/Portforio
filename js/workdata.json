@@ -1,0 +1,97 @@
+{
+    "work" : [
+        {
+            "catename" : "ALL"
+        },
+        {
+            "catename" : "Motion",
+            "list":[
+                {   
+                    "videoid": "_ITOYZ39EgY",
+                    "alt":"VIDEO THUMB",
+                    "title":"LILAC 타이포그라피",
+                    "period":"3week",
+                    "afterEffect" : "used",
+                    "illust" : "used",
+                    "comment" : "본 영상은 에프터이펙트의 연습용으로 제작된 카피본입니다.<br> 원본은 김라돈님의 IU - LILAC 라일락 키네틱 타이포그래피 입니다."
+                },
+                {
+                    "videoid": "ILFGwh5lYPw",
+                    "alt":"VIDEO THUMB",
+                    "title":"웨딩컷편집",
+                    "period":"1week",
+                    "premiere" : "used",
+                    "comment" : "본 영상은 프리미어 프로의 컷편집 연습용으로 제작되었습니다."
+                },
+                {
+                    "videoid": "ILFGwh5lYPw",
+                    "alt":"VIDEO THUMB",
+                    "title":"웨딩컷편집",
+                    "period":"1week",
+                    "premiere" : "used",
+                    "comment" : "본 영상은 프리미어 프로의 컷편집 연습용으로 제작되었습니다."
+                },
+                {
+                    "videoid": "xWUeEfP70f8",
+                    "alt":"VIDEO THUMB",
+                    "title":"모션그래픽3",
+                    "period":"1week",
+                    "premiere" : "used",
+                    "css" : "used",
+                    "git" : "used",
+                    "comment" : "아무말"
+                }
+            ]
+        },
+        {
+            "catename" : "DESIGN",
+            "list":[
+                {
+                    "imgurl": "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
+                    "alt":"DESIGN THUMB",
+                    "title":"디자인",
+                    "period":"1week",
+                    "comment" : "아무말"
+                },
+                {
+                    "imgurl": "img/image05.png",
+                    "alt":"DESIGN THUMB",
+                    "title":"디자인",
+                    "period":"1week",
+                    "comment" : "아무말"
+                }
+            ]
+        },
+        {
+            "catename" : "WEB",
+            "list":[
+                {
+                    "imgurl": "img/design1.jpg",
+                    "alt":"WEB THUMB",
+                    "title":"웹디자인1",
+                    "period":"1week",
+                    "css" : "used",
+                    "git" : "used",
+                    "comment" : "아무말"
+                },
+                {
+                    "imgurl": "img/design2.jpg",
+                    "alt":"WEB THUMB",
+                    "title":"웹디자인2",
+                    "period":"1week",
+                    "css" : "used",                    
+                    "illustrator" : "used"
+                },
+                {
+                    "imgurl": "img/design4.jpg",
+                    "alt":"WEB THUMB",
+                    "title":"MOVING POSTER4",
+                    "period":"1week",
+                    "figma" : "used",
+                    "css" : "used",
+                    "illustrator" : "used"
+                }
+            ]
+        }
+    ]
+}

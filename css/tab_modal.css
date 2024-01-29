@@ -1,0 +1,101 @@
+body.scrollfix{overflow-y: hidden;}
+
+
+.work{padding: 15rem 0;}
+
+.tab-content .work-btn{
+    position: absolute; 
+    top: 50%; transform: translateY(-50%); z-index: 0; 
+    font-size: 30px; 
+    color: #d85252; 
+    height: 100%; 
+    display: flex;
+    align-items: center;
+    
+}
+.tab-content .work-btn i{
+    padding: 15px ;
+    left: 8px;
+    right: 10px;
+}
+.tab-content .work-btn:hover{
+    color: #8b1414; 
+    background-color: #f3df9d;
+    /* filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.1)); */
+}
+.tab-content .work-prev{left: -5rem;}
+.tab-content .work-next{right: -5rem;}
+
+.work .tab-list{display: flex; justify-content: center; gap: 10px; margin-bottom: 96px;}
+.work .tab-list li{
+    font-size: 2rem;
+    padding: 0 20px; border: 2px solid #d85252; height: 50px; display: flex; align-items: center; border-radius: 30px; cursor: pointer; color: #8b1414;
+}
+.work .tab-list li:hover{background-color: #d85252; color: #FFC700;}
+.work .tab-list li.active{background-color: #d85252; color: #fff; border: 2px solid #d85252;}
+.tab-content{position: relative; margin-bottom: 20px;}
+.tab-content ul li{background-color: rgba(0,0,0,.1);}
+.tab-content ul li .imgbox{position: relative; width: 100%; padding-bottom: 60%;}
+.tab-content ul li .imgbox img{width: 100%; height: 100%; position: absolute; top: 0; left: 0; object-fit: cover;}
+
+.tab-content ul li .textbox{position: relative; padding: 20px; text-align: left;}
+.tab-content ul li .textbox h1{margin-bottom: 10px;}
+.tab-content ul li .textbox p{margin-bottom: 10px;;}
+.tab-content ul li .textbox .skill{}
+.tab-content ul li .textbox .skill h3{margin-bottom: 10px;}
+.tab-content ul li .textbox .skill ul{display: flex; gap: 10px; justify-content: flex-start}
+.tab-content ul li .textbox .skill ul li{height: 30px; background-color: rgba(0,0,0,0);}
+.tab-content ul li .textbox .skill ul li img{height: 100%; margin-bottom: 0%;}
+.tab-content ul li .work-view{display: none;}
+
+
+.modal{
+    position: fixed; background-color: rgba(0,0,0,.5); top: 50%; left: 50%; transform: translate(-50%, -50%); display: flex; justify-content: center; align-items: center; width: 100%; height: 0; overflow: hidden; transition: 0.5s; z-index: 11;
+}
+.modal.active{height: 100%;}
+.modal .modal-cont{width: 95%; max-width: 1600px; position: relative; transform: scale(0); transition: 0.5s;}
+.modal .modal-cont.active{transform: scale(1);}
+.modal .modal-cont .work-view{display: flex;}
+.modal .modal-cont .work-view .view-player{position: relative; width: 70%; background: rgba(0,0,0,.75);}
+.modal .modal-cont .work-view .view-player::after{padding-bottom: 56.25%; content: ""; display: block;}
+.modal .modal-cont .work-view .view-player iframe{position: absolute; width: 100%; height: 100%; border: none;}
+
+.modal .modal-cont .view-img{width: 90%; max-width: 95%; max-height: 90%; overflow-y: scroll; font-size: 0; padding-right: 10px;}
+.modal .modal-cont .view-img img{width: 100%;}
+.modal .modal-cont .view-img::-webkit-scrollbar {width: 10px;}
+.modal .modal-cont .view-img::-webkit-scrollbar-thumb {background: coral; border-radius: 10px;}
+.modal .modal-cont .view-img::-webkit-scrollbar-track {background: #fff; border-radius: 10px;}
+
+.modal .work-view .info{width: 30%; background-color:#fff; padding: 30px;}
+.modal .work-view .info h1{font-size: 3rem;}
+.modal .work-view .info h2{font-size: 2rem;}
+.modal .work-view .info h3{font-size: 1.5rem; margin-top: 2rem;}
+
+
+ 
+@media screen and (max-width: 1024px){ 
+    .modal-cont .work-view{
+        flex-direction: column;
+    }
+    .modal-cont ul li{
+        flex-direction: column;
+    }
+    .modal .work-view .player{width: 100%;}
+    .modal .work-view .info{width: 100%;}
+  }
+@media screen and (max-width: 768px){
+    .portfolio-wrap{padding: 0;}
+
+    .work-btn{display: none;}
+
+    .modal-cont .work-view{
+        flex-direction: column;
+    }
+    .modal-cont ul li{
+        flex-direction: column;
+    }
+    .modal .work-view .player{width: 100%;}
+    .modal .work-view .info{width: 100%;}
+    .modal .work-prev, .work-next{display: none;}
+}
+
