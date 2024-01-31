@@ -16,7 +16,7 @@
                     "comment" : "본 영상은 에프터이펙트의 연습용으로 제작된 카피본입니다.<br> 원본은 김라돈님의 IU - LILAC 라일락 키네틱 타이포그래피 입니다."
                 },
                 {
-                    "videoid": "ILFGwh5lYPw",
+                    "videoid": "OnGUK7tqMTk",
                     "alt":"VIDEO THUMB",
                     "title":"웨딩컷편집",
                     "period":"1week",
@@ -66,21 +66,24 @@
             "catename" : "WEB",
             "list":[
                 {
-                    "imgurl": "img/design1.jpg",
+                    "imgurl": "img/full_interpark_all.png",
                     "alt":"WEB THUMB",
-                    "title":"웹디자인1",
+                    "title":"인터파크 클론코딩",
                     "period":"1week",
+                    "html" : "used",
                     "css" : "used",
+                    "js" : "used",
                     "git" : "used",
-                    "comment" : "아무말"
+                    "comment" : "본 웹사이트는 '인터파크'의 UI 디자인을 카피하여 제작하였습니다.<br>https://guueeeeng.github.io/interpark"
                 },
                 {
-                    "imgurl": "img/design2.jpg",
+                    "imgurl": "img/full_figmapf_all.png",
                     "alt":"WEB THUMB",
-                    "title":"웹디자인2",
+                    "title":"포트폴리오 디자인 레이아웃",
                     "period":"1week",
-                    "css" : "used",                    
-                    "illustrator" : "used"
+                    "figma" : "used",                    
+                    "photoshop" : "used",                    
+                    "comment" : "본 이미지는 '스마트문화앱 UI 디자인'의 기획 과정이며 UI 디자인을 Figma를 사용하여 제작하였습니다."
                 },
                 {
                     "imgurl": "img/design4.jpg",
