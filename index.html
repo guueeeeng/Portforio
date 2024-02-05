@@ -14,6 +14,7 @@
     
     <!-- progressbar CDN -->
     <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/1.0.0/dist/progressbar.js"></script>
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <style>
@@ -25,6 +26,7 @@
     <script src="js/html5shiv.js"></script>
     <!-- <script src="js/prefixfree.min.js"></script> -->
     <script src="js/index.js"></script>
+    <link rel="icon" href="img/favicon/favicon.ico">
 </head>
 <body>
     <header class="header">
@@ -222,20 +224,21 @@
         </div>
 
         <!-- 모달창 제어부분 -->
-        <div class="modal">
-            <div class="modal-cont">
-                <div class="view-cont">
-                    <!-- <div class="view-img">
-                        <img src="../img/poster.jpg" alt="">
-                    </div>
-                    <div class="view-player">
-                        <iframe src="https://www.youtube.com/embed/u9eehcAHhi8" allowfullscreen></iframe>
-                    </div> -->
-                    <div class="info">
-                        <h1>카테고리 : 모션그래픽</h1>
-                        <h2>작업기간 : 1주일</h2>
-                        <h3> 사용툴 : 에프터이펙트, 프리미어프로...</h3>
-                    </div>
+        <div class="mask"></div>
+        <div class="modal-cont">
+
+            <div class="view-cont">
+                <!-- <div class="view-img">
+                    <img src="../img/poster.jpg" alt="">
+                </div>
+                <div class="view-player">
+                    <iframe src="https://www.youtube.com/embed/u9eehcAHhi8" allowfullscreen></iframe>
+                </div> -->
+                <div class="info">
+                    <div class="close-modal"><p>모달닫기</p></div>
+                    <h1>카테고리 : 모션그래픽</h1>
+                    <h2>작업기간 : 1주일</h2>
+                    <h3> 사용툴 : 에프터이펙트, 프리미어프로...</h3>
                 </div>
             </div>
         </div>
@@ -369,13 +372,13 @@
                         </p>
                     </li>
                     <li>
-                        <span>2004.06.</span>
+                        <span> 2004.06.</span>
                         <p>
                             자동차 운전면허 1종 보통
                         </p>
                     </li>
                     <li>
-                        <span>2001.06.</span>
+                        <span> 2001.06.</span>
                         <p>
                             ACS Photoshop 5.0<br>
                             ACS illustrator 8.0
@@ -393,14 +396,10 @@
             </div>
         </div> 
         <div class="career-btm">
+
+            <div class="c-mask"></div>
             <div class="career-modal">
-                <div class="c-modal-cont">
-                    <div class="view-cont">
-                        <div class="player">
-                            <img src="img/img_full_career.png" alt="">
-                        </div>
-                    </div>
-                </div>
+                <img src="img/img_full_career.png" alt="">
             </div>        
         </div>
 

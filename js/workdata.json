@@ -24,12 +24,12 @@
                     "comment" : "본 영상은 프리미어 프로의 컷편집 연습용으로 제작되었습니다."
                 },
                 {
-                    "videoid": "ILFGwh5lYPw",
+                    "videoid": "yZHTuaQRycs",
                     "alt":"VIDEO THUMB",
-                    "title":"웨딩컷편집",
+                    "title":"MOVING POSTER HACK",
                     "period":"1week",
-                    "premiere" : "used",
-                    "comment" : "본 영상은 프리미어 프로의 컷편집 연습용으로 제작되었습니다."
+                    "afterEffect" : "used",
+                    "comment" : "본 영상은  에프터이펙트의 무빙포스터 연습용으로 제작되었습니다."
                 },
                 {
                     "videoid": "xWUeEfP70f8",
@@ -47,23 +47,33 @@
             "catename" : "DESIGN",
             "list":[
                 {
-                    "imgurl": "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
+                    "imgurl": "img/full_feather_all.png",
                     "alt":"DESIGN THUMB",
-                    "title":"디자인",
-                    "period":"1week",
-                    "comment" : "아무말"
+                    "title":"Drawing",
+                    "period":"4week",
+                    "photoshop" : "used",          
+                    "comment" : "영어동화책 'The Feather' <br> 2004 ~ 2007 라스어학원 재직당시 교재로 사용된 동화책입니다. <br> 원본은 약 A4 사이즈의 출판인쇄물 규격이고 드로잉부터 채색 모든 과정을 담당하였습니다."
                 },
                 {
-                    "imgurl": "img/image05.png",
+                    "imgurl": "img/full_app2020_all.png",
                     "alt":"DESIGN THUMB",
-                    "title":"디자인",
+                    "title":"GUI Design",
+                    "period":"2day",
+                    "illust" : "used",       
+                    "comment" : "가맹점의 고객관리 문자 발송 프로그램의 화면 디자인입니다.<br> 2010년대 개발된 프로그램으로 레이아웃이 스마트폰 체계에 적합하지 않은 옛날 디자인이라 디자인 리뉴얼을 맡게 되었습니다.<br>당시 사용중인 서비스였으므로 변경점에 관한 사용자의 혼란을 최소화하고 개발자의 업데이트 편의또한 고려하여 기존 레이아웃에서 크게 벗어나지 않게 재배치하여 디자인하였습니다.  "
+                },
+                {
+                    "imgurl": "img/full_sf_icons_all.png",
+                    "alt":"DESIGN THUMB",
+                    "title":"아이콘디자인",
                     "period":"1week",
-                    "comment" : "아무말"
+                    "illust" : "used",
+                    "comment" : "레시피앱에 들어가는 여러가지 식재료, 식기, 조리방법 아이콘입니다."
                 }
             ]
         },
         {
-            "catename" : "WEB",
+            "catename" : "WEB & APP",
             "list":[
                 {
                     "imgurl": "img/full_interpark_all.png",
@@ -80,19 +90,28 @@
                     "imgurl": "img/full_figmapf_all.png",
                     "alt":"WEB THUMB",
                     "title":"포트폴리오 디자인 레이아웃",
-                    "period":"1week",
+                    "period":"3day",
                     "figma" : "used",                    
                     "photoshop" : "used",                    
                     "comment" : "본 이미지는 '스마트문화앱 UI 디자인'의 기획 과정이며 UI 디자인을 Figma를 사용하여 제작하였습니다."
                 },
                 {
-                    "imgurl": "img/design4.jpg",
+                    "imgurl": "img/full_app2022_all.png",
                     "alt":"WEB THUMB",
-                    "title":"MOVING POSTER4",
+                    "title":"인공지능 기반 대리운전 요금조회 시스템 App",
+                    "period":"1day",
+                    "photoshop" : "used",
+                    "html" : "used",
+                    "comment" : "2022 기능 개발 프로세서 및 디자인 설계시안<br> 인공지능거점관리 가상홈페이지 설계화면을 바탕으로 제작된 디자인시안입니다.<br> 재직했던 회사의 사업제안서 및 특허권을 어필하기 위한 사업내용 설명 보조자료로 사용되었습니다.<br> http://qtec.kr/ai2/"
+                },
+                {
+                    "imgurl": "img/full_app2017_all.png",
+                    "alt":"WEB THUMB",
+                    "title":"우체국 물류지원단 App",
                     "period":"1week",
-                    "figma" : "used",
-                    "css" : "used",
-                    "illustrator" : "used"
+                    "photoshop" : "used",
+                    "illustrator" : "used",
+                    "comment" : "2017 우체국물류지원단 어플리케이션 <br> 메인 화면은 설계자의 의도를 반영하여 제작되었습니다.<br> 이 앱을 주로 이용하는 화물차 운전자 분들의 연령층을 고려하여 텍스트는 크게, 장시간 운전하는 분들의 눈에 피로하지 않은 연회색 베이스, 강조할 부분은 파스텔 톤으로, 메뉴에는 아이콘을 배치하여 직관성을 강조하였습니다."
                 }
             ]
         }

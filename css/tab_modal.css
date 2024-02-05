@@ -11,7 +11,7 @@ body.scrollfix{overflow-y: hidden;}
     height: 100%; 
     display: flex;
     align-items: center;
-    
+    background-color: #ffeaea;
 }
 .tab-content .work-btn i{
     padding: 15px ;
@@ -19,8 +19,8 @@ body.scrollfix{overflow-y: hidden;}
     right: 10px;
 }
 .tab-content .work-btn:hover{
-    color: #8b1414; 
-    background-color: #ffeaea;
+    color: #F05A23; 
+    background-color: rgb(255, 244, 224);
 }
 .tab-content .work-prev{left: -5rem; border-radius: 30px 0px 0px 30px;}
 .tab-content .work-next{right: -5rem; border-radius: 0px 30px 30px 0px;}
@@ -28,14 +28,21 @@ body.scrollfix{overflow-y: hidden;}
 .work .tab-list{display: flex; justify-content: center; gap: 10px; margin-bottom: 96px;}
 .work .tab-list li{
     font-size: 2rem;
-    padding: 0 20px; border: 2px solid #d85252; height: 50px; display: flex; align-items: center; border-radius: 30px; cursor: pointer; color: #8b1414;
+    padding: 0 20px; 
+    border: 2px solid #d85252; 
+    height: 50px; 
+    display: flex; 
+    align-items: center; 
+    border-radius: 30px; 
+    cursor: pointer; 
+    color: #8b1414;
 }
 .work .tab-list li:hover{background-color: #d85252; color: #FFC700;}
 .work .tab-list li.active{background-color: #d85252; color: #fff; border: 2px solid #d85252;}
-.tab-content{position: relative; margin-bottom: 20px;}
+.tab-content{position: relative; margin-bottom: 20px; border: 1px solid #ffeaea;}
 .tab-content ul li{background-color: rgba(0,0,0,.1);}
 .tab-content ul li .imgbox{position: relative; width: 100%; padding-bottom: 60%;}
-.tab-content ul li .imgbox img{width: 100%; height: 100%; position: absolute; top: 0; left: 0; object-fit: cover;}
+.tab-content ul li .imgbox img{width: 100%; height: 100%; position: absolute; top: 0; left: 0; object-fit: cover; object-position: top;}
 
 .tab-content ul li .textbox{position: relative; padding: 20px; text-align: left;}
 .tab-content ul li .textbox h1{margin-bottom: 10px;}
@@ -47,44 +54,52 @@ body.scrollfix{overflow-y: hidden;}
 .tab-content ul li .textbox .skill ul li img{height: 100%; margin-bottom: 0%;}
 .tab-content ul li .work-view{display: none;}
 
+.mask{width: 100%; height: 0%; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 11; background-color: rgba(0,0,0,.75);}
+.mask.active{height: 100%;}
 
-.modal{
-    position: fixed; background-color: rgba(0,0,0,.5); top: 50%; left: 50%; transform: translate(-50%, -50%); display: flex; justify-content: center; align-items: center; width: 100%; height: 0; overflow: hidden; transition: 0.5s; z-index: 55;
+
+.modal-cont{width: 95%; max-width: 1600px; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); transition: 0.5s; z-index: 111;}
+
+.modal-cont.active{transform: translate(-50%, -50%) scale(1); }
+.modal-cont .work-view{display: flex;}
+.modal-cont .work-view .view-player{position: relative; width: 70%; background: rgba(0,0,0,.75); border-radius: 10px 0 0 10px;}
+.modal-cont .work-view .view-player::after{padding-bottom: 56.25%; content: ""; display: block;}
+.modal-cont .work-view .view-player iframe{position: absolute; width: 100%; height: 100%; border: none; border-radius: 10px 0 0 10px;}
+
+.modal-cont .work-view .view-img{justify-content: space-between; 
+    width: 90%; max-height: 1080px; overflow-y: scroll; 
+    font-size: 0; border-radius: 10px 0 0 10px;}
+.modal-cont .view-img img{width: 100%; }
+.modal-cont .view-img::-webkit-scrollbar {width: 10px;}
+.modal-cont .view-img::-webkit-scrollbar-thumb {background: coral;}
+.modal-cont .view-img::-webkit-scrollbar-track {background: #fff;}
+
+.work-view .info{width: 30%; background-color:#ffeaea; padding: 30px; border-radius: 0 10px 10px 0; border: 3px solid #ffeaea; position: relative;}
+.work-view .info h1{font-size: 3rem;}
+.work-view .info h2{font-size: 2rem;}
+.work-view .info h3{font-size: 1.5rem; margin-top: 2rem;}
+
+.info .close-modal{
+    width: 100%; height: 50px; 
+    background-color: #F05A23;
+    padding: 30px;
+    position: sticky;
 }
-.modal.active{height: 100%;}
-.modal .modal-cont{width: 95%; max-width: 1600px; position: relative; transform: scale(0); transition: 0.5s;}
-.modal .modal-cont.active{transform: scale(1);}
-.modal .modal-cont .work-view{display: flex;}
-.modal .modal-cont .work-view .view-player{position: relative; width: 70%; background: rgba(0,0,0,.75);}
-.modal .modal-cont .work-view .view-player::after{padding-bottom: 56.25%; content: ""; display: block;}
-.modal .modal-cont .work-view .view-player iframe{position: absolute; width: 100%; height: 100%; border: none;}
-
-.modal .modal-cont .work-view .view-img{justify-content: space-between; 
-    width: 90%; max-width: 95%; max-height: 640px; overflow-y: scroll; 
-    font-size: 0;}
-.modal .modal-cont .view-img img{width: 100%; }
-.modal .modal-cont .view-img::-webkit-scrollbar {width: 10px;}
-.modal .modal-cont .view-img::-webkit-scrollbar-thumb {background: coral; border-radius: 10px;}
-.modal .modal-cont .view-img::-webkit-scrollbar-track {background: #fff; border-radius: 10px;}
-
-.modal .work-view .info{width: 30%; background-color:#fff; padding: 30px;}
-.modal .work-view .info h1{font-size: 3rem;}
-.modal .work-view .info h2{font-size: 2rem;}
-.modal .work-view .info h3{font-size: 1.5rem; margin-top: 2rem;}
-
 
  
 @media screen and (max-width: 1024px){ 
-    .modal-cont .work-view{
-        flex-direction: column;
-    }
-    .modal .modal-cont .work-view .view-player{width: 100%;}
-    .modal .work-view .info{width: 100%;}
+    .modal-cont .work-view{flex-direction: column;}
+    .modal-cont .work-view .view-player{width: 100%; border-radius: 10px 10px 0 0;}
+    .modal-cont .work-view .view-player iframe{border-radius: 10px 10px 0 0;}
+    .modal-cont .work-view .view-img{width: 100%; max-height: 900px;border-radius: 10px 0 10px 0;}
+    .modal-cont .view-img::-webkit-scrollbar-thumb {border-radius: 10px;}
+    .modal-cont .view-img::-webkit-scrollbar-track {border-radius: 0 8px 0 0;}
+    .work-view .info{width: 100%; border-radius: 0 0 10px 10px;}    
   }
 @media screen and (max-width: 768px){
     .portfolio-wrap{padding: 0;}
     .work-btn{display: none;}
-    .modal .work-view .info{width: 100%;}
-    .modal .work-prev, .work-next{display: none;}
+    .work-view .info{width: 100%;}
+    .work-prev, .work-next{display: none;}
 }
 

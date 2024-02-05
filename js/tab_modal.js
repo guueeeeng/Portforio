@@ -1,147 +1,7 @@
-window.onload = function(){
-    AOS.init();
 
-    //스크롤 내리면 header에 active 추가
-    let header = document.querySelector(".header")
-    window.addEventListener("scroll",function(){
-        if(window.scrollY >= 100){
-            header.classList.add("active")
-        }else{
-            header.classList.remove("active")
-        }
-    //스크롤 내리면 menu span에 active 추가
-        let scrollPosition = window.scrollY;
-        let sectionItem = document.querySelectorAll("section");
-        sectionItem.forEach(function(item){
-            let sectionTop = item.offsetTop - 300;
-            let sectionHeight = item.clientHeight;
-
-            if(scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight){
-                let sectionId = item.id
-                document.querySelector(".header-menu li.active").classList.remove("active")
-                document.querySelector(".header-menu li a[href = '#"+ sectionId +"']").parentNode.classList.add("active")
-            }
-        })
-
-    //상단으로 이동하는 버튼
-        let goTop = document.querySelector(".go-top");
-        if(scrollPosition >= 100){
-            goTop.classList.add("active") //class를 추가
-
-        }else{
-            goTop.classList.remove("active")
-        }
-    })
-    document.querySelector(".go-top").addEventListener("click", function(){
-        window.scrollTo(0,0)
-    })
-
-
-    // 모바일 메뉴 버튼
-    let moMenuBtn = document.querySelector(".mo-menu-btn")
-    let sideMenu = document.querySelector(".side-menu")
-    moMenuBtn.addEventListener("click",function(){
-        sideMenu.classList.toggle("active")
-        this.classList.toggle("active")
-    })
-    window.addEventListener("resize",function(){
-        let winWidth = window.innerWidth
-        if(winWidth > 768){
-            sideMenu.classList.remove("active")
-            moMenuBtn.classList.remove("active")
-        }
-    })
-    // 클릭 시 해당 섹션으로 이동 후 모바일메뉴 닫힘
-    let sideMenuItem = document.querySelectorAll(".side-menu ul li")
-    sideMenuItem.forEach(function(item){
-        item.addEventListener("click",function(){
-            sideMenu.classList.remove("active")
-            moMenuBtn.classList.remove("active")
-        })
-    })
-
-
-    // 텍스트가 한 글자씩 나타나는 스크립트
-    // let HomeTyped = new Typed(".home-text", {
-    //     strings:["안녕하세요","멀티미디어 디자이너 <br> 이영미입니다"],
-    //     typeSpeed:100,
-    //     cursorChar:"",
-    //     loop:true,
-    //     fadeOut: true
-    // })
-
-
-
-    // 스킬 프로그레스
-    function progressBar(selector, gauge, color){
-        var bar = new ProgressBar.Circle(selector, {
-            strokeWidth: 10,  //채워지는 선의 굵기
-            easing: 'easeInOut',
-            duration: 1400,
-            color: color,
-            trailColor: '#CFCFCF', // 배경 선 색상
-            trailWidth: 8, //배경 선의 긁기
-            // step : function(state, circle){
-            //     circle.setText(Math.round(circle.value() *100)+"%")
-            // }
-        });
-        bar.animate(gauge);
-        return bar; // Return the progress bar instance
-    }
-    let observe = new IntersectionObserver(function(entries){
-        entries.forEach(function(item){
-            if(item.isIntersecting){
-                proPs.animate(1)
-                proAi.animate(0.95)
-                proAe.animate(0.9)
-                proPr.animate(0.75)
-                proFigma.animate(0.8)
-                proBlender.animate(0.6)
-                proPpt.animate(0.9)
-                proHtml.animate(0.5)
-            }else{
-                proPs.animate(0)
-                proAi.animate(0)
-                proAe.animate(0)
-                proPr.animate(0)
-                proFigma.animate(0)
-                proBlender.animate(0)
-                proPpt.animate(0)
-                proHtml.animate(0)
-            }
-        })
-    })
-    let skillSection = document.querySelector(".skill")
-
-    // Start the progress bars with initial values
-    let proPs = progressBar(".ps", 0, "#1080E8");
-    let proAi = progressBar(".ai", 0, "#FF9A00");
-    let proAe = progressBar(".ae", 0, "#4B4BE1");
-    let proPr = progressBar(".pr", 0, "#5151CF");
-    let proFigma = progressBar(".figma", 0, "#FF835C");
-    let proBlender = progressBar(".blender", 0, "#FF7021");
-    let proPpt = progressBar(".ppt", 0, "#d14424");
-    let proHtml = progressBar(".html", 0, "#52B2FF");
-    observe.observe(skillSection)
-
-
-
-    // 이메일 버튼 양식 펼치기 & 접기
-    document.querySelector(".mail-btn").addEventListener("click",function(){
-        document.querySelector(".form-view").classList.toggle("show")
-        
-    })
-    document.querySelector(".btn-x").addEventListener("click",function(){
-        document.querySelector(".form-view").classList.toggle("show")
-        
-    })
+window.addEventListener("load", function(){
     
-// 썸네일 Work 부분
-
     // ▼ work tab_modal 
-    
-    let mask = document.querySelector(".mask")
-
     let modal = document.querySelector(".modal")
     let modalCont = document.querySelector(".modal-cont")
     let body = document.querySelector("body")
@@ -237,6 +97,7 @@ window.onload = function(){
                                 <iframe src="https://www.youtube.com/embed/${obj.videoid}?autoplay=1&mute=1" allowfullscreen></iframe>
                             </div>
                             <div class="info">
+                            <div class="close-modal"><p>모달닫기</p></div>
                                 <h1>카테고리 : ${obj.title}</h1>
                                 <h2>작업기간 : ${obj.period}</h2> 
                                 <h3>코멘트 : ${obj.comment}</h3>
@@ -299,10 +160,11 @@ window.onload = function(){
                             <div class="view-player" ${obj.videoid ? "style='display:block'" :"style='display:none'"}>
                                 <iframe src="https://www.youtube.com/embed/${obj.videoid}?autoplay=1&mute=1" allowfullscreen></iframe>
                             </div>
-                            <div class="info">
+                            <div class="info">                            
+                            <div class="close-modal"><p>모달닫기</p></div>
                                 <h1>카테고리 : ${obj.title}</h1>
                                 <h2>작업기간 : ${obj.period}</h2> 
-                                <h3>코멘트 : ${obj.comment}</h3>
+                                <h3>설명 : ${obj.comment}</h3>
                             </div>
                         </div>
                     </li> 
@@ -336,7 +198,7 @@ window.onload = function(){
         
         workItem.forEach(function(item){
             item.addEventListener("click", function(){
-                mask.classList.add("active")                
+                modal.classList.add("active")
                 modalCont.innerHTML = item.querySelector(".work-view").outerHTML;
                 setTimeout(function(){
                     modalCont.classList.add("active")
@@ -344,8 +206,8 @@ window.onload = function(){
                 body.classList.add("scrollfix")
             })
         })
-        mask.addEventListener("click",function(){
-            mask.classList.remove("active")
+        modal.addEventListener("click", function(){
+            modal.classList.remove("active")
             modalCont.classList.remove("active")
             body.classList.remove("scrollfix")
             modalCont.innerHTML = ``
@@ -354,38 +216,4 @@ window.onload = function(){
     }
 
 
-        
-// 이미지만 띄우는 모달 (경력전체보기 버튼 클릭 시 오프)
-
-let cMask = document.querySelector(".c-mask")
-let cModalCont = document.querySelector(".career-modal")
-// let cModal = document.querySelector(".career-modal")
-let workItem = document.querySelector(".c-all-btn")
-workItem.addEventListener("click", function(){
-    cMask.classList.add("active")
-    // cModal.classList.add("active")
-    setTimeout(function(){
-        cModalCont.classList.add("active")
-    },10)
-    cModalCont.classList.add("active")
-    body.classList.add("scrollfix")            
 })
-    cMask.addEventListener("click",function(){
-        cMask.classList.remove("active")
-        // cModal.addEventListener("click",function(){
-        // cModal.classList.remove("active")
-        cModalCont.classList.remove("active")
-        body.classList.remove("scrollfix")        
-})
-
-}
-
-
-
-
-
-
-
-
-
-

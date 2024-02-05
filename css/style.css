@@ -17,7 +17,7 @@ body.scrollfix{
     opacity: 0;
     visibility: hidden;
     transition: 0.5s;
-    z-index: 12;
+    z-index: 10;
 
     filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.5));
 }
@@ -376,8 +376,8 @@ body.scrollfix{
     margin-bottom: 10px;
 }
 .career-top .contbox ul li span{
-    width: 50%;
-    left: 30px;
+    width: 40%;
+    left: 10px;
     text-align: center;
     display: inline-block;
 }
@@ -481,24 +481,24 @@ body.scrollfix{
 .career-btm{position: relative;}
 
 /* ▼ 이미지만 띄워주는 모달창  */
+
+.c-mask{
+    position: fixed; background-color: rgba(0,0,0,.5); top: 50%; left: 50%; width: 100%; transform: translate(-50%, -50%);  height: 0; transition: 0.5s; z-index: 11;
+}
+.c-mask.active{height: 100%;}
+
 .career-modal{
     position: fixed; 
-    background-color: rgba(0,0,0,.5); 
     top: 50%; left: 50%; 
-    transform: translate(-50%, -50%); 
-    display: flex; justify-content: center; 
-    align-items: center; 
-    width: 100%; height: 0; 
+    transform: translate(-50%, -50%) scale(0); 
+    width: 95%; 
+    max-width: 1600px; 
     overflow: hidden; 
     transition: 0.5s; z-index: 33;
 }
-.career-modal.active{height: 100%;}
-.career-modal-cont{width: 95%; max-width: 1600px; position: relative; transform: scale(0); transition: 0.5s;}
-.career-modal-cont.active{transform: scale(1);}
-.career-modal .work-view{display: flex;}
-.career-modal .work-view .player{position: relative; width: 70%;}
-.career-modal .work-view .player::after{padding-bottom: 56.25%; content: ""; display: block;}
-.career-modal .work-view .player img{position: absolute; width: 100%; height: 100%; border: none;}
+.career-modal.active{transform: translate(-50%, -50%) scale(1);}
+.career-modal img{width: 100%;}
+
 /* ▲ 이미지만 띄워주는 모달창  */
 
 
