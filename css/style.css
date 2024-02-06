@@ -1,6 +1,6 @@
-body.scrollfix{
+/* body.scrollfix{
     overflow: hidden;
-}
+} */
 .go-top{
     position: fixed;
     right: 30px;
@@ -128,15 +128,17 @@ body.scrollfix{
     width: 100%;
     max-width: 400px;
     top: 0;
-    right: -100%;
+    right: 0%;
     height: 100vh;
     background-color: rgba(250,250,250,0.95);
     padding: 60px 0;
     font-size: 20px;
     transition: 0.3s;
+    width: 0;
+    overflow: hidden;
 }
 .side-menu.active{
-    right: 0;
+    width: 100%;
 }
 .side-menu ul{}
 .side-menu ul li{
@@ -233,6 +235,10 @@ body.scrollfix{
     }    
 }
 @media screen and (max-width: 768px){
+
+    .profile{
+        padding: 5rem 0;
+    }
     .profile-btm{
         flex-direction: column;
         gap: 30px;
@@ -240,19 +246,21 @@ body.scrollfix{
     .profile-btm .contbox:not(:last-child){
         border: none;
     }    
+    .profile-text h1{font-size: 3rem; margin-bottom: 1rem;}
+    .profile-text span{display: none;}
+    .profile-text p{font-size: 1.7rem;;}
 }
 
 
 /* 포트폴리오 */
 .portfolio{
-    padding: 15rem 0;
+    padding: 10rem 0;
     background: rgb(255,253,246);
     background: linear-gradient(0deg, rgba(255,239,239,1) 0%, rgba(255,253,246,1) 100%);
 }
 .portfolio-wrap{
     position: relative;    
     text-align: center;
-    padding: 0 6rem;
 }
 
 /* 스와이퍼 포트폴리오 + 탭필터 */
@@ -265,12 +273,12 @@ body.scrollfix{
     padding: 15rem 0;
 }
 .ability .skill {
-    height: 300px;
-    margin: 30px auto;
+    margin: 0 auto;
 }
 .ability .skill ul {
     width: 100%; max-width: 1300px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     margin-bottom: 10rem;
 }
@@ -329,16 +337,30 @@ body.scrollfix{
 @media screen and (max-width: 1024px){
 }
 @media screen and (max-width: 768px){
+    
     .portfolio{
     padding: 0;}
+    .portfolio-wrap{
+        padding: 0 2rem;
+    }
+    .portfolio .inner .title{margin-top: 20px;
+        margin-bottom: 25px;}
+
+    .ability {padding: 3rem;}
     .skill-wrap{gap: 5rem;}
-    .skill-wrap ul{width: 100%;}
+    .skill-wrap .skill ul{width: 100%; margin-bottom: 0;}
+
+    .ability .skill ul li {
+        width: 35%; 
+        gap: 5%;
+        margin-bottom: 5rem;
+    }
 }
 
 
 /* 경력학력자격증 부분 */
 .career{
-    padding: 15rem 0;
+    padding: 2rem 0;
     background: rgb(255,239,239);
     background: linear-gradient(180deg, rgba(255,239,239,1) 0%, rgba(255,244,203,1) 85%);
 }
@@ -420,6 +442,10 @@ body.scrollfix{
 
 @media screen and (max-width: 1024px){    
     .career{padding: 1rem 0;}
+    
+    .career .inner .title{margin-top: 40px;
+        margin-bottom: 0;}
+
     .career-top{flex-direction: column;}
     .career-top .contbox{
         padding: 0 3.5rem;
@@ -446,17 +472,35 @@ body.scrollfix{
     }
 }
 @media screen and (max-width: 768px){
+    
+    .career{padding: 2rem 0;}
     .career-top{
         flex-direction: column;
         gap: 30px;
     }
+    .career-top .contbox ul {
+        width: 100%;
+    }
+    .career-top .contbox ul li{
+        flex-direction: column;
+    }
+    .career-top .contbox ul li span{
+        width: 100%;
+        text-align: left;
+        margin-bottom: 5px;
+    }    
+    .career-top .contbox ul li p{
+        padding: 0;
+        margin-left: 5px;
+    }
     .career-top .contbox span{
         color: #404040;
         margin: 0;
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
     .career-top .contbox h2{
-        margin-left: 3rem;
+        margin-left: 0;
+        margin-top: 0;
         font-size: 2.5rem;
     }
     .career-top .contbox:not(:last-child){
@@ -464,13 +508,15 @@ body.scrollfix{
     }    
     .career-all{
         margin-left: -15%;
-        max-width: 50%;
+        max-width: 100%;
     }
+    .c-all-btn{display: none;}
     .btn-area{
-        left: 25%;
-        width: 50%;
+        left: 0;
+        width: 100%;
     }
 }
+
 
 @media screen and (max-width: 640px){
     .career-history{width: 95%; position: relative;}
@@ -500,6 +546,12 @@ body.scrollfix{
 .career-modal img{width: 100%;}
 
 /* ▲ 이미지만 띄워주는 모달창  */
+
+@media screen and (max-width: 640px){
+    .career-modal{
+        width: 100%;  text-align: center;}
+    .career-modal img{width: 90%;}
+}
 
 
 /* Contact */
@@ -574,10 +626,10 @@ body.scrollfix{
     text-align: center;
 }
 .mail-form .btn-x span{
-    position: absolute;
+    position: relative;
     top: 25%;
-    right: 28%;
 }
+
 .mail-form .btn-x:hover{color: #FFC700;}
 .mail-form .btn{
     width: 73%;
@@ -613,4 +665,21 @@ body.scrollfix{
     text-align: center; 
     color: #8b1414;
     padding: 30px;
+}
+
+
+@media screen and (max-width: 768px){
+    .contact{padding: 4rem 0;}
+    .footer{ padding: 20px;}
+    .contact-wrap{width: 100%;}
+    .contact .title {margin-bottom: 3rem;}
+    .contact-wrap .icon-wrap{
+        gap: 15%;
+        flex-wrap: wrap;;
+    }
+    .contact-wrap .icon-wrap li{
+        margin-top: 10%;
+        width: 30%;
+    }
+
 }

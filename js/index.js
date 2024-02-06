@@ -355,7 +355,7 @@ window.onload = function(){
 
 
         
-// 이미지만 띄우는 모달 (경력전체보기 버튼 클릭 시 오프)
+// 이미지만 띄우는 모달 (경력전체보기 버튼 클릭 시)
 
 let cMask = document.querySelector(".c-mask")
 let cModalCont = document.querySelector(".career-modal")
@@ -379,13 +379,6 @@ workItem.addEventListener("click", function(){
 })
 
 }
-
-
-
-
-
-
-
 
 
 
