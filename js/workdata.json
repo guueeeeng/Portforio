@@ -1,9 +1,6 @@
 {
     "work" : [
         {
-            "catename" : "ALL"
-        },
-        {
             "catename" : "Motion",
             "list":[
                 {   

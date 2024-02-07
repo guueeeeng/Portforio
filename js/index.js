@@ -23,7 +23,7 @@ window.onload = function(){
             }
         })
 
-    //상단으로 이동하는 버튼
+        //상단으로 이동하는 버튼
         let goTop = document.querySelector(".go-top");
         if(scrollPosition >= 100){
             goTop.classList.add("active") //class를 추가
@@ -59,17 +59,6 @@ window.onload = function(){
             moMenuBtn.classList.remove("active")
         })
     })
-
-
-    // 텍스트가 한 글자씩 나타나는 스크립트
-    // let HomeTyped = new Typed(".home-text", {
-    //     strings:["안녕하세요","멀티미디어 디자이너 <br> 이영미입니다"],
-    //     typeSpeed:100,
-    //     cursorChar:"",
-    //     loop:true,
-    //     fadeOut: true
-    // })
-
 
 
     // 스킬 프로그레스
@@ -185,133 +174,67 @@ window.onload = function(){
     let workSwiper;
     function workSlide(_idx){
         let swWorkHtml = ``
-        if(_idx === 0){
-            for(let i = 1; i < workData.work.length; i++){
-                let listData = workData.work[i].list;
-                for(let j = 0; j<listData.length; j++){
-                    let obj = listData[j];
-                    let html = `
-                    <li class="swiper-slide">
-                        <div class="imgbox">
-                            <img ${obj.videoid ? "style='display:block'" :"style='display:none'"} src="https://img.youtube.com/vi/${obj.videoid}/mqdefault.jpg" alt="">
-                            <img ${obj.imgurl ? "style='display:block'" :"style='display:none'"} src="${obj.imgurl}" alt="">
+        let listData = workData.work[_idx].list;
+        for(let i = 0; i< listData.length; i++){
+            let obj = listData[i];
+            let html = `
+                <li class="swiper-slide">
+                    <div class="imgbox">
+                        <img ${obj.videoid ? "style='display:block'" :"style='display:none'"} src="https://img.youtube.com/vi/${obj.videoid}/mqdefault.jpg" alt="">
+                        <img ${obj.imgurl ? "style='display:block'" :"style='display:none'"} src="${obj.imgurl}" alt="">
+                    </div>
+                    <div class="textbox">
+                        <h1>${obj.title}</h1>
+                        <p>작업기간 : ${obj.period}</p>
+                        <div class="skill">
+                            <h3>사용툴</h3>
+                            <ul>
+                                <li ${obj.photoshop ? "style='display:block'" :"style='display:none'"}>
+                                    <img src="img/folder_photoshop.svg" alt="">
+                                </li>
+                                <li ${obj.illust ? "style='display:block'" :"style='display:none'"}>
+                                    <img src="img/folder_illust.svg" alt="">
+                                </li>
+                                <li ${obj.afterEffect ? "style='display:block'" :"style='display:none'"}>
+                                    <img src="img/folder_after_effects.svg" alt="">
+                                </li>
+                                <li ${obj.premiere ? "style='display:block'" :"style='display:none'"}>
+                                    <img src="img/folder_premiere.svg" alt="">
+                                </li>
+                                <li ${obj.html ? "style='display:block'" :"style='display:none'"}>
+                                    <img src="img/folder_html.svg" alt="">
+                                </li>
+                                <li ${obj.css ? "style='display:block'" :"style='display:none'"}>
+                                    <img src="img/folder_css.svg" alt="">
+                                </li>
+                                <li ${obj.js ? "style='display:block'" :"style='display:none'"}>
+                                    <img src="img/folder_js.svg" alt="">
+                                </li>
+                                <li ${obj.git ? "style='display:block'" :"style='display:none'"}>
+                                    <img src="img/folder_git.svg" alt="">
+                                </li>
+                            </ul>
                         </div>
-                        <div class="textbox">
-                            <h1>${obj.title}</h1>
-                            <p>작업기간 : ${obj.period}</p>
-                            <div class="skill">
-                                <h3>사용툴</h3>
-                                <ul>
-                                    <li ${obj.photoshop ? "style='display:block'" :"style='display:none'"}>
-                                        <img src="img/folder_photoshop.svg" alt="">
-                                    </li>
-                                    <li ${obj.illust ? "style='display:block'" :"style='display:none'"}>
-                                        <img src="img/folder_illust.svg" alt="">
-                                    </li>
-                                    <li ${obj.afterEffect ? "style='display:block'" :"style='display:none'"}>
-                                        <img src="img/folder_after_effects.svg" alt="">
-                                    </li>
-                                    <li ${obj.premiere ? "style='display:block'" :"style='display:none'"}>
-                                        <img src="img/folder_premiere.svg" alt="">
-                                    </li>
-                                    <li ${obj.html ? "style='display:block'" :"style='display:none'"}>
-                                        <img src="img/folder_html.svg" alt="">
-                                    </li>
-                                    <li ${obj.css ? "style='display:block'" :"style='display:none'"}>
-                                        <img src="img/folder_css.svg" alt="">
-                                    </li>
-                                    <li ${obj.js ? "style='display:block'" :"style='display:none'"}>
-                                        <img src="img/folder_js.svg" alt="">
-                                    </li>
-                                    <li ${obj.git ? "style='display:block'" :"style='display:none'"}>
-                                        <img src="img/folder_git.svg" alt="">
-                                    </li>
-                                </ul>
-                            </div>
+                    </div>
+                    <div class="work-view">
+                        <div class="view-img" ${obj.imgurl ? "style='display:block'" :"style='display:none'"}>
+                            <img src="${obj.imgurl}" alt="">
                         </div>
-                        <div class="work-view">
-                            <div class="view-img" ${obj.imgurl ? "style='display:block'" :"style='display:none'"}>
-                                <img src="${obj.imgurl}" alt="">
-                            </div>
-                            <div class="view-player" ${obj.videoid ? "style='display:block'" :"style='display:none'"}>
-                                <iframe src="https://www.youtube.com/embed/${obj.videoid}?autoplay=1&mute=1" allowfullscreen></iframe>
-                            </div>
-                            <div class="info">
-                                <h1>카테고리 : ${obj.title}</h1>
-                                <h2>작업기간 : ${obj.period}</h2> 
-                                <h3>코멘트 : ${obj.comment}</h3>
-                            </div>
+                        <div class="view-player" ${obj.videoid ? "style='display:block'" :"style='display:none'"}>
+                            <iframe src="https://www.youtube.com/embed/${obj.videoid}?autoplay=1&mute=1" allowfullscreen></iframe>
                         </div>
-                    </li> 
-                    `;
-                    swWorkHtml += html
-                }
-                let swWorkWrapper = document.querySelector(".sw-work ul")
-                swWorkWrapper.innerHTML = swWorkHtml
-            }
-        }else{
-            let listData = workData.work[_idx].list;
-            for(let i = 0; i< listData.length; i++){
-                let obj = listData[i];
-                let html = `
-                    <li class="swiper-slide">
-                        <div class="imgbox">
-                            <img ${obj.videoid ? "style='display:block'" :"style='display:none'"} src="https://img.youtube.com/vi/${obj.videoid}/mqdefault.jpg" alt="">
-                            <img ${obj.imgurl ? "style='display:block'" :"style='display:none'"} src="${obj.imgurl}" alt="">
+                        <div class="info">
+                            <h1>카테고리 : ${obj.title}</h1>
+                            <h2>작업기간 : ${obj.period}</h2> 
+                            <h3>코멘트 : ${obj.comment}</h3>
                         </div>
-                        <div class="textbox">
-                            <h1>${obj.title}</h1>
-                            <p>작업기간 : ${obj.period}</p>
-                            <div class="skill">
-                                <h3>사용툴</h3>
-                                <ul>
-                                    <li ${obj.photoshop ? "style='display:block'" :"style='display:none'"}>
-                                        <img src="img/folder_photoshop.svg" alt="">
-                                    </li>
-                                    <li ${obj.illust ? "style='display:block'" :"style='display:none'"}>
-                                        <img src="img/folder_illust.svg" alt="">
-                                    </li>
-                                    <li ${obj.afterEffect ? "style='display:block'" :"style='display:none'"}>
-                                        <img src="img/folder_after_effects.svg" alt="">
-                                    </li>
-                                    <li ${obj.premiere ? "style='display:block'" :"style='display:none'"}>
-                                        <img src="img/folder_premiere.svg" alt="">
-                                    </li>
-                                    <li ${obj.html ? "style='display:block'" :"style='display:none'"}>
-                                        <img src="img/folder_html.svg" alt="">
-                                    </li>
-                                    <li ${obj.css ? "style='display:block'" :"style='display:none'"}>
-                                        <img src="img/folder_css.svg" alt="">
-                                    </li>
-                                    <li ${obj.js ? "style='display:block'" :"style='display:none'"}>
-                                        <img src="img/folder_js.svg" alt="">
-                                    </li>
-                                    <li ${obj.git ? "style='display:block'" :"style='display:none'"}>
-                                        <img src="img/folder_git.svg" alt="">
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="work-view">
-                            <div class="view-img" ${obj.imgurl ? "style='display:block'" :"style='display:none'"}>
-                                <img src="${obj.imgurl}" alt="">
-                            </div>
-                            <div class="view-player" ${obj.videoid ? "style='display:block'" :"style='display:none'"}>
-                                <iframe src="https://www.youtube.com/embed/${obj.videoid}?autoplay=1&mute=1" allowfullscreen></iframe>
-                            </div>
-                            <div class="info">
-                                <h1>카테고리 : ${obj.title}</h1>
-                                <h2>작업기간 : ${obj.period}</h2> 
-                                <h3>코멘트 : ${obj.comment}</h3>
-                            </div>
-                        </div>
-                    </li> 
-                `;
-                swWorkHtml += html
-            }
-            let swWorkWrapper = document.querySelector(".sw-work ul")
-            swWorkWrapper.innerHTML = swWorkHtml
+                    </div>
+                </li> 
+            `;
+            swWorkHtml += html
         }
+        let swWorkWrapper = document.querySelector(".sw-work ul")
+        swWorkWrapper.innerHTML = swWorkHtml
         if(workSwiper){
             workSwiper.destroy();
         }

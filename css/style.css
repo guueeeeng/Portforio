@@ -18,7 +18,6 @@
     visibility: hidden;
     transition: 0.5s;
     z-index: 10;
-
     filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.5));
 }
 .go-top.active{
@@ -50,7 +49,6 @@
 }
 .header .inner .logo{
     height: 6rem;
-
 }
 .header .inner .logo a{
     height: 100%;
@@ -81,15 +79,9 @@
     font-weight: 700;
 }
 .header-menu li:nth-child(1){display: none;}
-.header-menu li a i{display: none;}
+/* .header-menu li a i{display: none;} */
 .header-menu li a span{
-    position: flex;
     display: block;
-    bottom: -4rem;
-    left: 50%;
-    /* transform: translateX(-50%);
-    background: #d85252; 
-    padding: 5px; */
     color: #fff;
     border-radius: 5px;
     opacity: 1;
@@ -431,7 +423,6 @@
 }
 .career-top .contbox ul .btn-area .btn-resume{
     display: block;
-    bottom: -4rem;
     text-align: center;
     background: #d85252; 
     padding: 10px;
@@ -466,10 +457,8 @@
     .career-text{
         width: 100%;
     }
-    .btn-area{        
-        left: 26%;
-        width: 50%;
-    }
+    .career-top .contbox ul .btn-area{padding: 30px 0;}
+    .career-top .contbox ul .btn-area .btn-resume{}
 }
 @media screen and (max-width: 768px){
     

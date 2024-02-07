@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import url('https://webfontworld.github.io/SCoreDream/SCoreDream.css');
 @font-face {
     font-family: 'JalnanGothic';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/JalnanGothic.woff') format('woff');
@@ -74,39 +75,6 @@ body{
     color: #CF4848;
     text-shadow: 0px 3px 8px rgba(0,0,0,0.2);
 }
-/* .title h2::after{
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #CF4848;
-    left: -33px;
-    transform: translateX(-50%);
-    top: 24%;
-}
-.title h2::before{
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #e79a9a;
-    left: -30px;
-    transform: translateX(-50%);
-    top: 28%;
-} */
-
-/* .title h2::before{
-    content: "";
-    position: absolute;
-    width: 30%;
-    height: 5px;
-    background-color: #8b1414;
-    left: 50%;
-    transform: translateX(-50%);
-    top: -3rem;
-} */
 
 @media screen and (max-width: 1024px){
     html{font-size: 10px;}
