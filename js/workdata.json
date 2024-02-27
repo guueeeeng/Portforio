@@ -21,22 +21,23 @@
                     "comment" : "본 영상은 프리미어 프로의 컷편집 연습용으로 제작되었습니다."
                 },
                 {
-                    "videoid": "yZHTuaQRycs",
+                    "videoid": "MGgthK427Uo",
                     "alt":"VIDEO THUMB",
-                    "title":"MOVING POSTER HACK",
+                    "title":"MOVING POSTER LEGO",
                     "period":"1week",
+                    "photoshop" : "used",
                     "afterEffect" : "used",
-                    "comment" : "본 영상은  에프터이펙트의 무빙포스터 연습용으로 제작되었습니다."
+                    "comment" : "블렌더와 에프터이펙트로 제작한 무빙포스터입니다."
                 },
                 {
-                    "videoid": "xWUeEfP70f8",
-                    "alt":"VIDEO THUMB",
+                    "videoid": "yZHTuaQRycs",
+                    "alt":"MOVING POSTER HACK",
                     "title":"모션그래픽3",
                     "period":"1week",
                     "premiere" : "used",
                     "css" : "used",
                     "git" : "used",
-                    "comment" : "아무말"
+                    "comment" : "본 영상은  에프터이펙트의 무빙포스터 연습용으로 제작되었습니다"
                 }
             ]
         },
