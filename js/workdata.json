@@ -13,12 +13,12 @@
                     "comment" : "본 영상은 에프터이펙트의 연습용으로 제작된 카피본입니다.<br> 원본은 김라돈님의 IU - LILAC 라일락 키네틱 타이포그래피 입니다."
                 },
                 {
-                    "videoid": "OnGUK7tqMTk",
+                    "videoid": "xxuOacwrsO0",
                     "alt":"VIDEO THUMB",
                     "title":"웨딩컷편집",
                     "period":"1week",
                     "premiere" : "used",
-                    "comment" : "본 영상은 프리미어 프로의 컷편집 연습용으로 제작되었습니다."
+                    "comment" : "본 영상은 프리미어 프로의 컷편집 + 색보정 연습용으로 제작되었습니다."
                 },
                 {
                     "videoid": "MGgthK427Uo",
@@ -30,13 +30,22 @@
                     "comment" : "블렌더와 에프터이펙트로 제작한 무빙포스터입니다."
                 },
                 {
-                    "videoid": "yZHTuaQRycs",
-                    "alt":"MOVING POSTER HACK",
-                    "title":"모션그래픽3",
-                    "period":"1week",
+                    "videoid": "72YQGp8LynU",
+                    "alt":"VIDEO THUMB",
+                    "title":"해남에서 왔구마",
+                    "period":"2week",
                     "premiere" : "used",
-                    "css" : "used",
-                    "git" : "used",
+                    "afterEffect" : "used",
+                    "illust" : "used",
+                    "comment" : "해남고구마를 소재로한 쇼츠 공모전으로 4인 팀작업으로 역할 분담·제작 후 출품한 영상입니다."
+                },
+                {
+                    "videoid": "yZHTuaQRycs",
+                    "alt":"VIDEO THUMB",
+                    "title":"MOVING POSTER HACK",
+                    "period":"1week",
+                    "afterEffect" : "used",
+                    "illust" : "used",
                     "comment" : "본 영상은  에프터이펙트의 무빙포스터 연습용으로 제작되었습니다"
                 }
             ]
