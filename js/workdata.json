@@ -44,19 +44,28 @@
                     "videoid": "65ujX-IIaiw",
                     "alt":"VIDEO THUMB",
                     "title":"공모전 후기",
-                    "period":"1week",
+                    "period":"2day",
                     "afterEffect" : "used",
                     "illust" : "used",
                     "comment" : "해나미구마 쇼츠 공모전의 작업과정에 관한 워크플로우입니다. 공모전팀원들, 조재현 선생님, 심사기간 내내 응원해주신 모든 분들께 감사드립니다.<br>최종완료되어 출품했던 작품은 아래 링크로 확인하실 수 있습니다.<p> https://youtube.com/shorts/72YQGp8LynU"
                 },
                 {
+                    "videoid": "X1-8kg-Xubs",
+                    "alt":"VIDEO THUMB",
+                    "title":"Live 2D - Dance of Fairies",
+                    "period":"1week",
+                    "afterEffect" : "used",
+                    "photoshop" : "used",
+                    "comment" : "핀터레스트에서 원본 아트웤이미지를 다운받고 포토샵으로 레이어를 분리하고 에프터이펙트에서 입체적인 모션감을 주어 애니메이션화한 작품입니다."
+                },
+                {
                     "videoid": "yZHTuaQRycs",
                     "alt":"VIDEO THUMB",
                     "title":"MOVING POSTER HACK",
-                    "period":"1week",
+                    "period":"2hr",
                     "afterEffect" : "used",
                     "illust" : "used",
-                    "comment" : "본 영상은  에프터이펙트의 무빙포스터 연습용으로 제작되었습니다"
+                    "comment" : "본 영상은 에프터이펙트의 무빙포스터 연습용으로 제작되었습니다"
                 }
             ]
         },

@@ -87,7 +87,7 @@ window.addEventListener("load", function(){
                                         <img src="img/folder_git.svg" alt="">
                                     </li>
                                     <li ${obj.figma ? "style='display:block'" :"style='display:none'"}>
-                                        <img src="img/folder_figma.svg" alt="">
+                                        <img src="img/folder_figma.png" alt="">
                                     </li>
                                     <li ${obj.blender ? "style='display:block'" :"style='display:none'"}>
                                         <img src="img/folder_blender.svg" alt="">
@@ -157,7 +157,7 @@ window.addEventListener("load", function(){
                                         <img src="img/folder_git.svg" alt="">
                                     </li>
                                     <li ${obj.figma ? "style='display:block'" :"style='display:none'"}>
-                                        <img src="img/folder_figma.svg" alt="">
+                                        <img src="img/folder_figma.png" alt="">
                                     </li>
                                     <li ${obj.blender ? "style='display:block'" :"style='display:none'"}>
                                         <img src="img/folder_blender.svg" alt="">
